@@ -2995,9 +2995,9 @@ ${currentUser.email}
 
     function handleGoogleSignIn() {
       // 1. Direct official Google OAuth Verification Page
-      const origin = window.location.origin;
-      const pathname = window.location.pathname;
-      const redirectUri = encodeURIComponent(origin + pathname);
+      // Normalize origin without trailing slash to match Google Cloud Console exactly
+      const rawOrigin = window.location.origin.replace(/\/+$/, '');
+      const redirectUri = encodeURIComponent(rawOrigin);
       
       // Official Verified Google Cloud OAuth 2.0 Client ID
       const clientId = '1077108645550-dd3slk2ga3onprb1ggqcapsqva4vunu1.apps.googleusercontent.com';
