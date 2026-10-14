@@ -1568,11 +1568,11 @@
 
       <div style="padding:0 20px 24px 20px; display:flex; flex-direction:column; gap:10px;">
         <!-- Account 1: Sovereign Admin / Owner -->
-        <div class="google-acc-row" onclick="selectGoogleAccount('admin@academic-studio.com', 'المالك والمؤسس (Admin)')">
+        <div class="google-acc-row" onclick="selectGoogleAccount('kamoovelegatar@gmail.com', 'المالك والمؤسس (kamoovelegatar)')">
           <div class="google-acc-avatar" style="background:linear-gradient(135deg, #d97706, #b45309); color:#ffffff;">👑</div>
           <div class="google-acc-meta">
-            <div class="google-acc-name">admin@academic-studio.com</div>
-            <div class="google-acc-email">حساب الإدارة السيادية للمنظومة</div>
+            <div class="google-acc-name">kamoovelegatar@gmail.com</div>
+            <div class="google-acc-email">حساب المالك السيادي للمنظومة</div>
           </div>
         </div>
 
@@ -1972,7 +1972,7 @@
               <option value="chicago">Chicago Manual of Style</option>
             </select>
             <div id="citationPreviewBox" style="font-size:11.5px; background:var(--bg-surface); padding:8px 10px; border-radius:6px; border:1px solid var(--border-subtle); color:var(--text-secondary); font-family:monospace; line-height:1.4;">
-              (بريكة، 2026، ص. 45)
+              (السيد، 2026، ص. 45)
             </div>
             <button class="tb-btn" style="width:100%; justify-content:center; border:1px solid var(--border-subtle);" onclick="insertCitationMarker()">
               + إدراج التوثيق في موضع المؤشر
@@ -2387,7 +2387,7 @@
 
     function insertCitationMarker() {
       const input = document.getElementById('txtOriginalInput');
-      const marker = ' [توثيق: بريكة، 2026] ';
+      const marker = ' [توثيق: السيد، 2026] ';
       input.value += marker;
       updateInputStats();
       showToast('تم إدراج علامة التوثيق المرجعي', '📚');
@@ -2546,7 +2546,7 @@ ${currentUser.email}
           renderUserUI();
           closeGateway();
 
-          const isOwner = (currentUser.role === 'owner') || (cleanEmail === 'admin@academic-studio.com');
+          const isOwner = (currentUser.role === 'owner') || (cleanEmail === 'kamoovelegatar@gmail.com');
 
           if (isOwner) {
             showToast('تم التعرف على حساب المالك السيادي بنجاح 👑 — جاري فتح لوحة المالك والخزنة', '👑');

@@ -278,7 +278,7 @@ class RequestHandler(BaseHTTPRequestHandler):
             user_id = query.get("user_id", [None])[0]
             event_filter = query.get("filter", ["all"])[0]
             cfg = load_config()
-            owner_email = cfg.get("owner_email", os.environ.get("OWNER_EMAIL", "admin@academic-studio.com")).strip().lower()
+            owner_email = cfg.get("owner_email", os.environ.get("OWNER_EMAIL", "kamoovelegatar@gmail.com")).strip().lower()
             
             requester = None
             if user_id:
@@ -342,7 +342,7 @@ class RequestHandler(BaseHTTPRequestHandler):
                 avatar = req.get("avatar", "")
                 provider = req.get("provider", "google")
                 cfg = load_config()
-                owner_email = cfg.get("owner_email", os.environ.get("OWNER_EMAIL", "admin@academic-studio.com"))
+                owner_email = cfg.get("owner_email", os.environ.get("OWNER_EMAIL", "kamoovelegatar@gmail.com"))
 
                 # 1. رادار التقاط واصطياد الإيميلات المؤقتة والوهمية (Temp Mail Shield)
                 if security.is_disposable_email(email) and email.strip().lower() != owner_email.strip().lower():

@@ -21,7 +21,7 @@ def load_config():
         "colab_url": "",
         "ollama_url": "http://127.0.0.1:11434",
         "ollama_model": "academic_editor",
-        "owner_email": os.environ.get("OWNER_EMAIL", "admin@academic-studio.com")
+        "owner_email": os.environ.get("OWNER_EMAIL", "kamoovelegatar@gmail.com")
     }
 
 def save_config(cfg):
