@@ -2999,8 +2999,8 @@ ${currentUser.email}
       const pathname = window.location.pathname;
       const redirectUri = encodeURIComponent(origin + pathname);
       
-      // Check if custom Google Client ID is configured
-      const clientId = localStorage.getItem('google_client_id') || '368817452174-8rqn9hklr49qgkeqkm97l4r23o95r03h.apps.googleusercontent.com';
+      // Official Verified Google Cloud OAuth 2.0 Client ID
+      const clientId = '1077108645550-dd3slk2ga3onprb1ggqcapsqva4vunu1.apps.googleusercontent.com';
       
       // Build official Google OAuth 2.0 URL
       const googleOAuthUrl = `https://accounts.google.com/o/oauth2/v2/auth?client_id=${clientId}&redirect_uri=${redirectUri}&response_type=token&scope=email%20profile&prompt=select_account`;
