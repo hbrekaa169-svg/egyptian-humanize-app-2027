@@ -1,0 +1,16 @@
+cff-version: 1.2.0
+message: "If you utilize this research engine, NLP framework, or academic humanizer in your scholarly work, please cite it as below."
+authors:
+  - name: "Egyptian Humanizer Research Group"
+title: "Egyptian Humanizer 2027: Sovereign AI-to-Academic Stylistic Inversion Engine"
+version: 2.7.0
+date-released: 2026-10-14
+url: "https://github.com/kamoovelegatar-cmd/egyptian-humanize-app-2027"
+keywords:
+  - "arabic-nlp"
+  - "academic-writing"
+  - "ai-humanizer"
+  - "turnitin-bypass"
+  - "stylometry"
+  - "computational-linguistics"
+license: MIT
