@@ -1,0 +1,9 @@
+{
+  "active_mode": "authentic",
+  "groq_api_key": "",
+  "groq_model": "qwen/qwen3.8-27b",
+  "colab_url": "",
+  "ollama_url": "http://127.0.0.1:11434",
+  "ollama_model": "academic_editor",
+  "owner_email": "admin@academic-studio.com"
+}

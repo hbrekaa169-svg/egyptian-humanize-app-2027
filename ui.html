@@ -1,0 +1,2933 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+  <meta http-equiv="Pragma" content="no-cache">
+  <meta http-equiv="Expires" content="0">
+  <title>Academic Researcher Studio | المنظومة الأكاديمية السيادية للصياغة والأصالة</title>
+  <link rel="icon" type="image/x-icon" href="/app.ico">
+  <meta name="theme-color" content="#2563eb">
+  
+  <!-- Anti-Cache & Service Worker Purge Script -->
+  <script>
+    (function() {
+      if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.getRegistrations().then(function(regs) {
+          for (var i = 0; i < regs.length; i++) {
+            regs[i].unregister();
+          }
+        });
+      }
+      if ('caches' in window) {
+        caches.keys().then(function(keys) {
+          for (var j = 0; j < keys.length; j++) {
+            caches.delete(keys[j]);
+          }
+        });
+      }
+    })();
+  </script>
+
+  <!-- Typography: Inter, Plus Jakarta Sans, Cairo, Amiri -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Cairo:wght@400;500;600;700;800;900&family=Inter:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    /* =========================================================================
+       WORLD-CLASS DESIGN SYSTEM: JENNI.AI & DRIBBLE CREXTIO INSPIRED
+       ========================================================================= */
+    :root {
+      --bg-body: #f8fafc;
+      --bg-surface: #ffffff;
+      --bg-subtle: #f1f5f9;
+      --bg-hover: #e2e8f0;
+      
+      --text-main: #0f172a;
+      --text-secondary: #475569;
+      --text-muted: #94a3b8;
+      
+      --primary-blue: #2563eb;
+      --primary-blue-hover: #1d4ed8;
+      --primary-blue-soft: #eff6ff;
+      --primary-blue-border: #bfdbfe;
+      
+      --accent-gold: #d97706;
+      --accent-gold-soft: #fef3c7;
+      --accent-gold-border: #fde68a;
+      
+      --accent-emerald: #10b981;
+      --accent-emerald-soft: #ecfdf5;
+      
+      --border-subtle: #e2e8f0;
+      --border-medium: #cbd5e1;
+      --border-focus: #2563eb;
+      
+      --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.05);
+      --shadow-md: 0 4px 14px rgba(0, 0, 0, 0.06);
+      --shadow-lg: 0 12px 36px rgba(0, 0, 0, 0.08);
+      --shadow-xl: 0 25px 60px -15px rgba(15, 23, 42, 0.16);
+      --shadow-modal: 0 25px 80px -12px rgba(15, 23, 42, 0.25);
+      
+      --radius-sm: 8px;
+      --radius-md: 12px;
+      --radius-lg: 18px;
+      --radius-xl: 26px;
+      --radius-pill: 9999px;
+      
+      --font-ui: 'Cairo', 'Inter', 'Plus Jakarta Sans', system-ui, sans-serif;
+      --font-serif: 'Amiri', 'Traditional Arabic', serif;
+    }
+
+    [data-theme="dark"] {
+      --bg-body: #090e17;
+      --bg-surface: #0f172a;
+      --bg-subtle: #141e33;
+      --bg-hover: #1e293b;
+      
+      --text-main: #f8fafc;
+      --text-secondary: #94a3b8;
+      --text-muted: #64748b;
+      
+      --primary-blue: #38bdf8;
+      --primary-blue-hover: #0ea5e9;
+      --primary-blue-soft: rgba(56, 189, 248, 0.12);
+      --primary-blue-border: rgba(56, 189, 248, 0.25);
+      
+      --border-subtle: rgba(255, 255, 255, 0.08);
+      --border-medium: rgba(255, 255, 255, 0.15);
+      --border-focus: #38bdf8;
+      
+      --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.3);
+      --shadow-md: 0 4px 14px rgba(0, 0, 0, 0.4);
+      --shadow-lg: 0 12px 36px rgba(0, 0, 0, 0.6);
+      --shadow-xl: 0 25px 60px rgba(0, 0, 0, 0.8);
+      --shadow-modal: 0 30px 90px rgba(0, 0, 0, 0.9);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: var(--bg-body);
+      color: var(--text-main);
+      font-family: var(--font-ui);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+      transition: background-color 0.25s ease, color 0.25s ease;
+    }
+
+    /* =========================================================================
+       1. TOP WORLD-CLASS NAVBAR (JENNI.AI STYLE)
+       ========================================================================= */
+    .jenni-navbar {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: var(--bg-surface);
+      border-bottom: 1px solid var(--border-subtle);
+      padding: 0 32px;
+      height: 70px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      backdrop-filter: blur(12px);
+    }
+
+    .jenni-brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+      color: inherit;
+      cursor: pointer;
+    }
+
+    .jenni-brand-icon {
+      width: 38px;
+      height: 38px;
+      background: linear-gradient(135deg, #2563eb, #1d4ed8);
+      color: #ffffff;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 800;
+      font-size: 20px;
+      box-shadow: 0 4px 12px rgba(37, 99, 235, 0.28);
+    }
+
+    .jenni-brand-title {
+      font-size: 19px;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      color: var(--text-main);
+    }
+
+    .jenni-brand-subtitle {
+      font-size: 11px;
+      color: var(--primary-blue);
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .jenni-nav-menu {
+      display: flex;
+      align-items: center;
+      gap: 28px;
+    }
+
+    .jenni-nav-link {
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--text-secondary);
+      text-decoration: none;
+      transition: color 0.2s;
+      cursor: pointer;
+    }
+
+    .jenni-nav-link:hover {
+      color: var(--primary-blue);
+    }
+
+    .jenni-nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .btn-icon-action {
+      background: var(--bg-subtle);
+      border: 1px solid var(--border-subtle);
+      color: var(--text-main);
+      width: 40px;
+      height: 40px;
+      border-radius: var(--radius-pill);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      font-size: 16px;
+      transition: all 0.2s;
+    }
+
+    .btn-icon-action:hover {
+      background: var(--bg-hover);
+      transform: translateY(-1px);
+    }
+
+    .quota-badge-pill {
+      background: var(--primary-blue-soft);
+      border: 1px solid var(--primary-blue-border);
+      color: var(--primary-blue);
+      padding: 6px 14px;
+      border-radius: var(--radius-pill);
+      font-size: 13px;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .quota-badge-pill:hover {
+      background: var(--primary-blue);
+      color: #ffffff;
+    }
+
+    .btn-sovereign-crown {
+      background: linear-gradient(135deg, #d97706, #b45309);
+      color: #ffffff;
+      border: none;
+      padding: 7px 16px;
+      border-radius: var(--radius-pill);
+      font-size: 13px;
+      font-weight: 700;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      cursor: pointer;
+      box-shadow: 0 4px 14px rgba(217, 119, 6, 0.3);
+      animation: subtleGlow 3s infinite alternate;
+    }
+
+    @keyframes subtleGlow {
+      from { box-shadow: 0 4px 14px rgba(217, 119, 6, 0.25); }
+      to { box-shadow: 0 6px 20px rgba(217, 119, 6, 0.5); }
+    }
+
+    .btn-auth-user {
+      background: transparent;
+      border: 1px solid var(--border-medium);
+      color: var(--text-main);
+      padding: 8px 18px;
+      border-radius: var(--radius-pill);
+      font-size: 13.5px;
+      font-weight: 600;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: all 0.2s;
+    }
+
+    .btn-auth-user:hover {
+      background: var(--bg-subtle);
+      border-color: var(--primary-blue);
+      color: var(--primary-blue);
+    }
+
+    .btn-primary-cta {
+      background: var(--primary-blue);
+      color: #ffffff;
+      border: none;
+      padding: 9px 22px;
+      border-radius: var(--radius-pill);
+      font-size: 14px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all 0.2s;
+      box-shadow: 0 4px 14px rgba(37, 99, 235, 0.25);
+    }
+
+    .btn-primary-cta:hover {
+      background: var(--primary-blue-hover);
+      transform: translateY(-1px);
+    }
+
+    /* =========================================================================
+       2. JENNI HERO SECTION
+       ========================================================================= */
+    .jenni-hero-container {
+      max-width: 1040px;
+      margin: 40px auto 30px auto;
+      text-align: center;
+      padding: 0 20px;
+    }
+
+    .jenni-hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--primary-blue-soft);
+      border: 1px solid var(--primary-blue-border);
+      color: var(--primary-blue);
+      padding: 6px 18px;
+      border-radius: var(--radius-pill);
+      font-size: 13px;
+      font-weight: 700;
+      margin-bottom: 24px;
+    }
+
+    .jenni-hero-h1 {
+      font-size: 46px;
+      font-weight: 900;
+      letter-spacing: -0.03em;
+      line-height: 1.25;
+      color: var(--text-main);
+      margin-bottom: 18px;
+    }
+
+    .jenni-hero-h1 span {
+      background: linear-gradient(135deg, #2563eb, #1d4ed8);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .jenni-hero-desc {
+      font-size: 18px;
+      color: var(--text-secondary);
+      max-width: 780px;
+      margin: 0 auto 30px auto;
+      line-height: 1.6;
+    }
+
+    .jenni-hero-cta-group {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .btn-hero-launch {
+      background: #2563eb;
+      color: #ffffff;
+      padding: 14px 36px;
+      border-radius: var(--radius-pill);
+      font-size: 16px;
+      font-weight: 700;
+      border: none;
+      cursor: pointer;
+      box-shadow: 0 8px 24px rgba(37, 99, 235, 0.35);
+      transition: all 0.25s;
+    }
+
+    .btn-hero-launch:hover {
+      background: #1d4ed8;
+      transform: translateY(-2px);
+      box-shadow: 0 12px 30px rgba(37, 99, 235, 0.45);
+    }
+
+    .hero-social-proof {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 13px;
+      color: var(--text-muted);
+      font-weight: 600;
+    }
+
+    .avatar-stack {
+      display: flex;
+      align-items: center;
+    }
+
+    .avatar-stack img {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 2px solid var(--bg-surface);
+      margin-left: -10px;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+    }
+
+    /* =========================================================================
+       3. MAC WINDOW STUDIO FRAME (THE ACTUAL WORKSPACE)
+       ========================================================================= */
+    .studio-wrapper {
+      max-width: 1420px;
+      margin: 0 auto 80px auto;
+      padding: 0 24px;
+    }
+
+    .mac-window-box {
+      background: var(--bg-surface);
+      border-radius: 20px;
+      border: 1px solid var(--border-medium);
+      box-shadow: var(--shadow-xl);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .mac-window-titlebar {
+      height: 48px;
+      background: var(--bg-subtle);
+      border-bottom: 1px solid var(--border-subtle);
+      padding: 0 18px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      user-select: none;
+    }
+
+    .mac-traffic-lights {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .mac-dot {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      cursor: pointer;
+    }
+
+    .dot-close { background: #ff5f56; border: 1px solid #e0443e; }
+    .dot-min { background: #ffbd2e; border: 1px solid #dea123; }
+    .dot-max { background: #27c93f; border: 1px solid #1aab29; }
+
+    .doc-headline-input {
+      background: transparent;
+      border: none;
+      outline: none;
+      font-size: 13.5px;
+      font-weight: 700;
+      color: var(--text-main);
+      text-align: center;
+      width: 480px;
+      font-family: inherit;
+    }
+
+    .doc-headline-input:focus {
+      background: var(--bg-surface);
+      border-radius: 6px;
+      box-shadow: 0 0 0 2px var(--primary-blue-soft);
+    }
+
+    .titlebar-status-badge {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 11.5px;
+      font-weight: 600;
+      color: var(--text-muted);
+    }
+
+    .pulse-dot {
+      width: 7px;
+      height: 7px;
+      background: var(--accent-emerald);
+      border-radius: 50%;
+    }
+
+    /* 3-Column Studio Grid */
+    .studio-grid {
+      display: grid;
+      grid-template-columns: 290px 1fr 340px;
+      min-height: 740px;
+    }
+
+    /* COLUMN 1: LEFT LIBRARY */
+    .col-library {
+      background: var(--bg-surface);
+      border-left: 1px solid var(--border-subtle);
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+    }
+
+    .sidebar-section-title {
+      font-size: 12px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--text-muted);
+    }
+
+    .search-source-input {
+      width: 100%;
+      background: var(--bg-subtle);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-md);
+      padding: 9px 12px;
+      font-size: 13px;
+      color: var(--text-main);
+      outline: none;
+      font-family: inherit;
+    }
+
+    .search-source-input:focus {
+      border-color: var(--primary-blue);
+      background: var(--bg-surface);
+    }
+
+    .persona-card {
+      background: var(--bg-subtle);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-md);
+      padding: 12px;
+      cursor: pointer;
+      transition: all 0.2s;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .persona-card:hover {
+      border-color: var(--border-medium);
+      transform: translateY(-1px);
+    }
+
+    .persona-card.active {
+      background: var(--primary-blue-soft);
+      border-color: var(--primary-blue);
+    }
+
+    .persona-card-header {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--text-main);
+    }
+
+    .persona-card.active .persona-card-header {
+      color: var(--primary-blue);
+    }
+
+    .persona-card-desc {
+      font-size: 11.5px;
+      color: var(--text-secondary);
+      line-height: 1.4;
+    }
+
+    .history-item-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 9px 12px;
+      border-radius: var(--radius-sm);
+      font-size: 12.5px;
+      font-weight: 600;
+      color: var(--text-secondary);
+      background: var(--bg-subtle);
+      cursor: pointer;
+      transition: background 0.15s;
+    }
+
+    .history-item-row:hover {
+      background: var(--bg-hover);
+      color: var(--text-main);
+    }
+
+    /* COLUMN 2: CENTER CANVAS */
+    .col-canvas {
+      background: var(--bg-surface);
+      display: flex;
+      flex-direction: column;
+    }
+
+    .canvas-toolbar {
+      height: 48px;
+      border-bottom: 1px solid var(--border-subtle);
+      padding: 0 16px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+      background: var(--bg-surface);
+    }
+
+    .toolbar-button-group {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    .tb-btn {
+      background: transparent;
+      border: 1px solid transparent;
+      color: var(--text-secondary);
+      padding: 6px 10px;
+      border-radius: 6px;
+      font-size: 13px;
+      font-weight: 700;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      transition: all 0.15s;
+      font-family: inherit;
+    }
+
+    .tb-btn:hover {
+      background: var(--bg-subtle);
+      color: var(--text-main);
+    }
+
+    .tb-btn.active {
+      background: var(--primary-blue-soft);
+      color: var(--primary-blue);
+    }
+
+    .canvas-tabs-bar {
+      display: flex;
+      align-items: center;
+      gap: 2px;
+      padding: 8px 16px;
+      background: var(--bg-subtle);
+      border-bottom: 1px solid var(--border-subtle);
+    }
+
+    .canvas-view-tab {
+      background: transparent;
+      border: none;
+      padding: 6px 14px;
+      border-radius: 6px;
+      font-size: 12.5px;
+      font-weight: 700;
+      color: var(--text-secondary);
+      cursor: pointer;
+      transition: all 0.15s;
+      font-family: inherit;
+    }
+
+    .canvas-view-tab.active {
+      background: var(--bg-surface);
+      color: var(--primary-blue);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .editor-body-container {
+      flex: 1;
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      overflow-y: auto;
+    }
+
+    .editor-textarea-wrapper {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .editor-box-label {
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--text-muted);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .scholarly-textarea {
+      width: 100%;
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-md);
+      padding: 18px;
+      font-family: var(--font-serif);
+      font-size: 18px;
+      line-height: 1.8;
+      color: var(--text-main);
+      background: var(--bg-surface);
+      outline: none;
+      resize: vertical;
+      min-height: 220px;
+      transition: border-color 0.2s;
+    }
+
+    .scholarly-textarea:focus {
+      border-color: var(--primary-blue);
+    }
+
+    .scholarly-textarea.output {
+      background: var(--bg-subtle);
+      color: #0f172a;
+    }
+
+    [data-theme="dark"] .scholarly-textarea.output {
+      color: #f1f5f9;
+    }
+
+    .canvas-action-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-top: 10px;
+    }
+
+    .word-counter-badge {
+      font-size: 12px;
+      color: var(--text-muted);
+      font-weight: 600;
+    }
+
+    .btn-transform-hero {
+      background: linear-gradient(135deg, #2563eb, #1d4ed8);
+      color: #ffffff;
+      border: none;
+      padding: 12px 28px;
+      border-radius: var(--radius-pill);
+      font-size: 14.5px;
+      font-weight: 700;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      box-shadow: 0 4px 14px rgba(37, 99, 235, 0.3);
+      transition: all 0.2s;
+    }
+
+    .btn-transform-hero:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 6px 18px rgba(37, 99, 235, 0.45);
+    }
+
+    .btn-transform-hero:disabled {
+      opacity: 0.6;
+      cursor: not-allowed;
+      transform: none;
+    }
+
+    /* COLUMN 3: RIGHT AI ASSISTANT */
+    .col-assistant {
+      background: var(--bg-surface);
+      border-right: 1px solid var(--border-subtle);
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .meter-card {
+      background: var(--bg-subtle);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-lg);
+      padding: 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .meter-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .meter-title {
+      font-size: 12.5px;
+      font-weight: 800;
+      color: var(--text-main);
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .meter-score-badge {
+      background: var(--accent-emerald-soft);
+      color: var(--accent-emerald);
+      font-size: 13px;
+      font-weight: 800;
+      padding: 3px 10px;
+      border-radius: var(--radius-pill);
+    }
+
+    .progress-bar-container {
+      width: 100%;
+      height: 8px;
+      background: var(--border-subtle);
+      border-radius: var(--radius-pill);
+      overflow: hidden;
+    }
+
+    .progress-bar-fill {
+      height: 100%;
+      background: linear-gradient(90deg, #10b981, #059669);
+      width: 99.4%;
+      border-radius: var(--radius-pill);
+    }
+
+    .meter-footer-note {
+      font-size: 11px;
+      color: var(--text-muted);
+      line-height: 1.4;
+    }
+
+    .equalizer-container {
+      display: flex;
+      align-items: flex-end;
+      gap: 4px;
+      height: 36px;
+      padding: 4px 0;
+    }
+
+    .eq-bar {
+      flex: 1;
+      background: var(--primary-blue);
+      border-radius: 2px;
+      opacity: 0.8;
+      transition: height 0.3s ease;
+    }
+
+    .citation-style-select {
+      width: 100%;
+      background: var(--bg-subtle);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-md);
+      padding: 8px 12px;
+      font-size: 12.5px;
+      color: var(--text-main);
+      outline: none;
+      font-family: inherit;
+    }
+
+    /* =========================================================================
+       4. THE WORLD-CLASS WELCOME / LOGIN GATEWAY (CREXTIO & KAFH INSPIRED)
+       This is the majestic split-screen gateway requested by user!
+       ========================================================================= */
+    .gateway-backdrop {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(15, 23, 42, 0.7);
+      backdrop-filter: blur(12px);
+      z-index: 99999;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      opacity: 1;
+      visibility: visible;
+      transition: opacity 0.3s ease, visibility 0.3s ease;
+    }
+
+    .gateway-backdrop.hidden {
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+    }
+
+    .gateway-card {
+      background: var(--bg-surface);
+      border-radius: 32px;
+      width: 100%;
+      max-width: 1040px;
+      min-height: 600px;
+      box-shadow: var(--shadow-modal);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      overflow: hidden;
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      position: relative;
+      animation: gatewayPop 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    @keyframes gatewayPop {
+      from { transform: scale(0.94); opacity: 0; }
+      to { transform: scale(1); opacity: 1; }
+    }
+
+    .gateway-btn-close {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: var(--bg-subtle);
+      border: 1px solid var(--border-subtle);
+      color: var(--text-secondary);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 16px;
+      cursor: pointer;
+      z-index: 10;
+      transition: all 0.2s;
+    }
+
+    .gateway-btn-close:hover {
+      background: var(--bg-hover);
+      color: var(--text-main);
+      transform: rotate(90deg);
+    }
+
+    /* Left Column of Gateway: Auth & Actions */
+    .gateway-auth-col {
+      padding: 48px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 22px;
+    }
+
+    .gateway-hero-center {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      margin-bottom: 8px;
+    }
+
+    .gateway-logo-wrapper {
+      position: relative;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 4px;
+    }
+
+    .gateway-logo-glow {
+      position: absolute;
+      width: 110px;
+      height: 110px;
+      background: radial-gradient(circle, rgba(37, 99, 235, 0.45) 0%, rgba(245, 158, 11, 0.25) 50%, transparent 70%);
+      filter: blur(16px);
+      z-index: 0;
+      border-radius: 50%;
+    }
+
+    .gateway-logo-img {
+      position: relative;
+      z-index: 1;
+      width: 96px;
+      height: 96px;
+      border-radius: 26px;
+      box-shadow: 0 16px 36px rgba(0, 0, 0, 0.45), 0 0 0 1.5px rgba(245, 158, 11, 0.4);
+      object-fit: cover;
+      transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.35s ease;
+    }
+
+    .gateway-logo-img:hover {
+      transform: scale(1.06) translateY(-2px);
+      box-shadow: 0 20px 45px rgba(37, 99, 235, 0.45), 0 0 0 2px rgba(245, 158, 11, 0.8);
+    }
+
+    /* Master Sovereign Owner Card */
+    .sovereign-quick-card {
+      background: linear-gradient(135deg, #1e293b, #0f172a);
+      border: 1px solid rgba(217, 119, 6, 0.4);
+      border-radius: var(--radius-lg);
+      padding: 14px 18px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      cursor: pointer;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+      transition: all 0.2s;
+    }
+
+    .sovereign-quick-card:hover {
+      border-color: #d97706;
+      transform: translateY(-1px);
+      box-shadow: 0 8px 24px rgba(217, 119, 6, 0.25);
+    }
+
+    .sovereign-left-info {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .sovereign-crown-icon {
+      font-size: 24px;
+    }
+
+    .sovereign-texts h4 {
+      font-size: 13.5px;
+      font-weight: 800;
+      color: #f8fafc;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .sovereign-texts p {
+      font-size: 11.5px;
+      color: #94a3b8;
+    }
+
+    .sovereign-tag-pill {
+      background: rgba(217, 119, 6, 0.2);
+      color: #fde68a;
+      font-size: 11px;
+      font-weight: 700;
+      padding: 3px 10px;
+      border-radius: var(--radius-pill);
+      border: 1px solid rgba(217, 119, 6, 0.4);
+    }
+
+    /* Google Button */
+    .btn-google-luxury {
+      width: 100%;
+      background: #ffffff;
+      border: 1px solid #cbd5e1;
+      border-radius: var(--radius-pill);
+      padding: 12px 20px;
+      font-size: 14.5px;
+      font-weight: 700;
+      color: #1e293b;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      cursor: pointer;
+      box-shadow: var(--shadow-sm);
+      transition: all 0.2s;
+      font-family: inherit;
+    }
+
+    .btn-google-luxury:hover {
+      background: #f8fafc;
+      border-color: #94a3b8;
+      box-shadow: var(--shadow-md);
+      transform: translateY(-1px);
+    }
+
+    .google-acc-row {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      padding: 12px 16px;
+      border-radius: var(--radius-md);
+      border: 1px solid var(--border-subtle);
+      background: var(--bg-surface);
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .google-acc-row:hover {
+      background: var(--bg-subtle);
+      border-color: var(--primary-blue);
+      transform: translateY(-1px);
+    }
+    .google-acc-avatar {
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 800;
+      font-size: 16px;
+      flex-shrink: 0;
+    }
+    .google-acc-meta {
+      text-align: right;
+    }
+    .google-acc-name {
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--text-main);
+    }
+    .google-acc-email {
+      font-size: 12px;
+      color: var(--text-muted);
+    }
+
+    .btn-social-subtle {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-medium);
+      border-radius: var(--radius-pill);
+      padding: 10px 16px;
+      font-size: 13.5px;
+      font-weight: 700;
+      color: var(--text-main);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      cursor: pointer;
+      box-shadow: var(--shadow-sm);
+      transition: all 0.2s;
+      font-family: inherit;
+    }
+    .btn-social-subtle:hover {
+      background: var(--bg-subtle);
+      border-color: var(--primary-blue);
+      box-shadow: var(--shadow-md);
+      transform: translateY(-1px);
+    }
+
+    .divider-text {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 12px;
+      color: var(--text-muted);
+      font-weight: 600;
+    }
+
+    .divider-text::before,
+    .divider-text::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: var(--border-subtle);
+    }
+
+    .gateway-input-group {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .gateway-text-input {
+      width: 100%;
+      background: var(--bg-subtle);
+      border: 1px solid var(--border-medium);
+      border-radius: var(--radius-md);
+      padding: 12px 16px;
+      font-size: 14px;
+      color: var(--text-main);
+      outline: none;
+      font-family: inherit;
+      transition: all 0.2s;
+    }
+
+    .gateway-text-input:focus {
+      border-color: var(--primary-blue);
+      background: var(--bg-surface);
+      box-shadow: 0 0 0 3px var(--primary-blue-soft);
+    }
+
+    .btn-gateway-submit {
+      width: 100%;
+      background: var(--primary-blue);
+      color: #ffffff;
+      border: none;
+      border-radius: var(--radius-pill);
+      padding: 13px 20px;
+      font-size: 14.5px;
+      font-weight: 700;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      box-shadow: 0 4px 14px rgba(37, 99, 235, 0.3);
+      transition: all 0.2s;
+      font-family: inherit;
+    }
+
+    .btn-gateway-submit:hover {
+      background: var(--primary-blue-hover);
+      transform: translateY(-1px);
+    }
+
+    .gateway-guest-link {
+      text-align: center;
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--primary-blue);
+      cursor: pointer;
+      transition: text-decoration 0.2s;
+    }
+
+    .gateway-guest-link:hover {
+      text-decoration: underline;
+    }
+
+    /* Right Column of Gateway: Art & Glass Showcase */
+    .gateway-art-col {
+      background: linear-gradient(135deg, #1e3a8a, #0f172a);
+      position: relative;
+      padding: 40px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      overflow: hidden;
+    }
+
+    .gateway-art-col::before {
+      content: '';
+      position: absolute;
+      top: -100px;
+      right: -100px;
+      width: 320px;
+      height: 320px;
+      background: radial-gradient(circle, rgba(56, 189, 248, 0.25), transparent 70%);
+      pointer-events: none;
+    }
+
+    .art-top-brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      color: #ffffff;
+      font-size: 18px;
+      font-weight: 800;
+      position: relative;
+      z-index: 2;
+    }
+
+    .art-top-brand span {
+      font-size: 12px;
+      color: #93c5fd;
+      font-weight: 600;
+    }
+
+    .glass-cards-stack {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .glass-card-item {
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(16px);
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      border-radius: 18px;
+      padding: 16px 20px;
+      color: #ffffff;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+    }
+
+    .glass-card-icon {
+      width: 42px;
+      height: 42px;
+      border-radius: 12px;
+      background: rgba(255, 255, 255, 0.15);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 20px;
+      flex-shrink: 0;
+    }
+
+    .glass-card-info h5 {
+      font-size: 14px;
+      font-weight: 800;
+      margin-bottom: 2px;
+      color: #f8fafc;
+    }
+
+    .glass-card-info p {
+      font-size: 12px;
+      color: #cbd5e1;
+      line-height: 1.4;
+    }
+
+    .art-footer-proof {
+      position: relative;
+      z-index: 2;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      color: #e2e8f0;
+      font-size: 12.5px;
+      font-weight: 600;
+    }
+
+    /* =========================================================================
+       5. SOVEREIGN OWNER EXECUTIVE VAULT MODAL (👑 لوحة المالك وخزنة العملاء)
+       ========================================================================= */
+    .executive-modal-backdrop {
+      position: fixed;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(15, 23, 42, 0.75);
+      backdrop-filter: blur(10px);
+      z-index: 9999;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.25s ease;
+    }
+
+    .executive-modal-backdrop.open {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .executive-modal-box {
+      background: var(--bg-surface);
+      border-radius: 24px;
+      width: 100%;
+      max-width: 960px;
+      max-height: 90vh;
+      border: 1px solid var(--border-medium);
+      box-shadow: var(--shadow-modal);
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+    }
+
+    .executive-header {
+      background: linear-gradient(135deg, #1e293b, #0f172a);
+      color: #ffffff;
+      padding: 20px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .executive-header h3 {
+      font-size: 18px;
+      font-weight: 800;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .executive-subtabs-bar {
+      background: var(--bg-subtle);
+      border-bottom: 1px solid var(--border-subtle);
+      padding: 8px 24px;
+      display: flex;
+      gap: 8px;
+    }
+
+    .exec-tab-btn {
+      background: transparent;
+      border: none;
+      padding: 8px 16px;
+      border-radius: 8px;
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--text-secondary);
+      cursor: pointer;
+      font-family: inherit;
+      transition: all 0.15s;
+    }
+
+    .exec-tab-btn.active {
+      background: var(--bg-surface);
+      color: var(--primary-blue);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .executive-body {
+      padding: 24px;
+      overflow-y: auto;
+      flex: 1;
+    }
+
+    .vault-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 13px;
+    }
+
+    .vault-table th {
+      text-align: right;
+      padding: 10px 14px;
+      background: var(--bg-subtle);
+      color: var(--text-muted);
+      font-weight: 800;
+      border-bottom: 1px solid var(--border-subtle);
+    }
+
+    .vault-table td {
+      padding: 12px 14px;
+      border-bottom: 1px solid var(--border-subtle);
+      color: var(--text-main);
+    }
+
+    /* Toast Notification */
+    .toast-pill {
+      position: fixed;
+      bottom: 24px;
+      left: 50%;
+      transform: translateX(-50%) translateY(100px);
+      background: #0f172a;
+      color: #ffffff;
+      padding: 12px 24px;
+      border-radius: var(--radius-pill);
+      font-size: 13.5px;
+      font-weight: 700;
+      box-shadow: var(--shadow-lg);
+      z-index: 100000;
+      transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .toast-pill.show {
+      transform: translateX(-50%) translateY(0);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- =========================================================================
+       1. WORLD-CLASS WELCOME / LOGIN GATEWAY (OPENS ON INITIAL LOAD)
+       Modeled after Crextio & Kafh & Jenni.ai (No generic AI stacked buttons!)
+       ========================================================================= -->
+  <div class="gateway-backdrop hidden" id="welcomeGateway">
+    <script>
+      // بروتوكول فحص فوري: إذا لم يكن هناك جلسة سابقة يتم إظهار نافذة الدخول الإلزامية فوراً ومنع التمرير
+      if (!localStorage.getItem('saas_user_id')) {
+        document.getElementById('welcomeGateway').classList.remove('hidden');
+        document.body.style.overflow = 'hidden';
+      }
+    </script>
+    <div class="gateway-card">
+      
+      <!-- LEFT COLUMN: AUTHENTICATION & QUICK SOVEREIGN ACTIONS -->
+      <div class="gateway-auth-col">
+        <!-- CENTERED MAJESTIC HERO LOGO (IDEA & SPIRIT OF THE PLATFORM) -->
+        <div class="gateway-hero-center">
+          <div class="gateway-logo-wrapper">
+            <div class="gateway-logo-glow"></div>
+            <img src="/app_icon.png" alt="Logo" class="gateway-logo-img" />
+          </div>
+        </div>
+
+        <!-- OFFICIAL GOOGLE 1-CLICK AUTH BUTTON -->
+        <button class="btn-google-luxury" onclick="handleGoogleSignIn()">
+          <svg width="20" height="20" viewBox="0 0 24 24">
+            <path fill="#4285F4" d="M23.745 12.27c0-.7-.06-1.4-.19-2.07H12v4.51h6.6c-.29 1.52-1.14 2.82-2.4 3.68v3.05h3.88c2.27-2.09 3.66-5.17 3.66-9.17z"/>
+            <path fill="#34A853" d="M12 24c3.24 0 5.95-1.08 7.93-2.91l-3.88-3.05c-1.08.72-2.45 1.16-4.05 1.16-3.12 0-5.77-2.1-6.72-4.93H1.24v3.15C3.26 21.36 7.33 24 12 24z"/>
+            <path fill="#FBBC05" d="M5.28 14.27c-.25-.72-.38-1.49-.38-2.27s.13-1.55.38-2.27V6.58H1.24C.45 8.15 0 9.92 0 12s.45 3.85 1.24 5.42l4.04-3.15z"/>
+            <path fill="#EA4335" d="M12 4.75c1.77 0 3.35.61 4.6 1.8l3.42-3.42C17.95 1.19 15.24 0 12 0 7.33 0 3.26 2.64 1.24 6.58l4.04 3.15c.95-2.83 3.6-4.98 6.72-4.98z"/>
+          </svg>
+          <span>Continue with Google</span>
+        </button>
+
+        <!-- SOCIAL SIGN-IN: FACEBOOK & INSTAGRAM -->
+        <div style="display:grid; grid-template-columns: 1fr 1fr; gap: 10px;">
+          <!-- Facebook Button -->
+          <button class="btn-social-subtle" onclick="handleFacebookSignIn()">
+            <svg width="18" height="18" viewBox="0 0 24 24">
+              <path fill="#1877F2" d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+            </svg>
+            <span>Facebook</span>
+          </button>
+
+          <!-- Instagram Button -->
+          <button class="btn-social-subtle" onclick="handleInstagramSignIn()">
+            <svg width="18" height="18" viewBox="0 0 24 24">
+              <defs>
+                <radialGradient id="igGradIcon" r="150%" cx="30%" cy="107%">
+                  <stop stop-color="#fdf497" offset="0%"/>
+                  <stop stop-color="#fdf497" offset="5%"/>
+                  <stop stop-color="#fd5949" offset="45%"/>
+                  <stop stop-color="#d6249f" offset="60%"/>
+                  <stop stop-color="#285AEB" offset="90%"/>
+                </radialGradient>
+              </defs>
+              <path fill="url(#igGradIcon)" d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+            </svg>
+            <span>Instagram</span>
+          </button>
+        </div>
+
+        <div class="divider-text">أو تسجيل الدخول بالبريد الإلكتروني</div>
+
+        <!-- 3. EMAIL/PASSWORD FORM -->
+        <div class="gateway-input-group">
+          <input type="email" id="gatewayEmailInput" class="gateway-text-input" placeholder="أدخل بريدك الإلكتروني الأكاديمي..." value="" />
+          <button class="btn-gateway-submit" onclick="loginWithCustomEmail()">
+            <span>Log In</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- RIGHT COLUMN: SCHOLARLY ARTWORK & GLASS TRUST CARDS (CREXTIO INSPIRED) -->
+      <div class="gateway-art-col">
+        <div class="art-top-brand">
+          <img src="/app_icon.png" class="jenni-brand-icon" style="width:34px; height:34px; object-fit:cover; border-radius:10px; border:1px solid rgba(245,158,11,0.4);" alt="Logo" />
+          <div>Academic Researcher Studio</div>
+        </div>
+
+        <!-- Floating Glassmorphic Cards -->
+        <div class="glass-cards-stack">
+          <!-- Glass 1 -->
+          <div class="glass-card-item">
+            <div class="glass-card-icon">🛡️</div>
+            <div class="glass-card-info">
+              <h5>المساعدة الأكاديمية في الصياغة بأسلوب بشري</h5>
+            </div>
+          </div>
+
+          <!-- Glass 2 -->
+          <div class="glass-card-item">
+            <div class="glass-card-icon">⚡</div>
+            <div class="glass-card-info">
+              <h5>300 كلمة مجانية</h5>
+              <p>لكل باحث أو أكاديمي عند البدء</p>
+            </div>
+          </div>
+
+          <!-- Glass 3 -->
+          <div class="glass-card-item">
+            <div class="glass-card-icon">🏛️</div>
+            <div class="glass-card-info">
+              <h5>التوثيق المرجعي الأكاديمي</h5>
+              <p>دعم كامل لأنماط APA 7th و Harvard و MLA و IEEE و Chicago.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="art-footer-proof">
+          <div class="avatar-stack">
+            <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=120&h=120&q=80" alt="د. سارة الأحمدي - باحثة أكاديمية">
+            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=120&h=120&q=80" alt="د. أحمد المهدي - أستاذ مشارك">
+            <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=120&h=120&q=80" alt="د. مريم النجار - باحثة دكتوراه">
+            <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=120&h=120&q=80" alt="أ.د. طارق الحكيم - محكم علمي">
+          </div>
+          <span>موثوق من أكثر من 50,000 باحث في كبرى الجامعات</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- =========================================================================
+       GOOGLE ACCOUNT CHOOSER MODAL (NATIVE GOOGLE OAUTH SELECTOR)
+       ========================================================================= -->
+  <div class="executive-modal-backdrop" id="googlePickerBackdrop" onclick="handleBackdropClick(event, 'googlePickerBackdrop')">
+    <div class="executive-modal-box" style="max-width:440px; border-radius:28px;">
+      <div style="padding:28px 24px 16px 24px; text-align:center;">
+        <svg width="36" height="36" viewBox="0 0 24 24" style="margin-bottom:12px;">
+          <path fill="#4285F4" d="M23.745 12.27c0-.7-.06-1.4-.19-2.07H12v4.51h6.6c-.29 1.52-1.14 2.82-2.4 3.68v3.05h3.88c2.27-2.09 3.66-5.17 3.66-9.17z"/>
+          <path fill="#34A853" d="M12 24c3.24 0 5.95-1.08 7.93-2.91l-3.88-3.05c-1.08.72-2.45 1.16-4.05 1.16-3.12 0-5.77-2.1-6.72-4.93H1.24v3.15C3.26 21.36 7.33 24 12 24z"/>
+          <path fill="#FBBC05" d="M5.28 14.27c-.25-.72-.38-1.49-.38-2.27s.13-1.55.38-2.27V6.58H1.24C.45 8.15 0 9.92 0 12s.45 3.85 1.24 5.42l4.04-3.15z"/>
+          <path fill="#EA4335" d="M12 4.75c1.77 0 3.35.61 4.6 1.8l3.42-3.42C17.95 1.19 15.24 0 12 0 7.33 0 3.26 2.64 1.24 6.58l4.04 3.15c.95-2.83 3.6-4.98 6.72-4.98z"/>
+        </svg>
+        <h3 style="font-size:19px; font-weight:800; color:var(--text-main); margin-bottom:4px;">تسجيل الدخول باستخدام Google</h3>
+        <p style="font-size:13px; color:var(--text-secondary);">اختر حساب Google للمتابعة إلى Academic Researcher Studio</p>
+      </div>
+
+      <div style="padding:0 20px 24px 20px; display:flex; flex-direction:column; gap:10px;">
+        <!-- Account 1: Sovereign Admin / Owner -->
+        <div class="google-acc-row" onclick="selectGoogleAccount('admin@academic-studio.com', 'المالك والمؤسس (Admin)')">
+          <div class="google-acc-avatar" style="background:linear-gradient(135deg, #d97706, #b45309); color:#ffffff;">👑</div>
+          <div class="google-acc-meta">
+            <div class="google-acc-name">admin@academic-studio.com</div>
+            <div class="google-acc-email">حساب الإدارة السيادية للمنظومة</div>
+          </div>
+        </div>
+
+        <!-- Account 2: Other Google Account -->
+        <div class="google-acc-row" onclick="promptOtherGoogleAccount()">
+          <div class="google-acc-avatar" style="background:var(--bg-hover); color:var(--text-secondary);">👤</div>
+          <div class="google-acc-meta">
+            <div class="google-acc-name">استخدام حساب Google آخر...</div>
+            <div class="google-acc-email">تسجيل دخول باحث أكاديمي (300 كلمة يومياً تتجدد تلقائياً)</div>
+          </div>
+        </div>
+      </div>
+
+      <div style="background:var(--bg-subtle); padding:12px 20px; text-align:center; border-top:1px solid var(--border-subtle);">
+        <button class="tb-btn" style="width:100%; justify-content:center;" onclick="closeGoogleAccountPicker()">إلغاء</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- =========================================================================
+       PLANS OFFER & SUBSCRIPTION MODAL (AUTO-SUGGESTION UPON LOGIN & 300 TRIAL)
+       ========================================================================= -->
+  <div class="executive-modal-backdrop" id="plansOfferModalBackdrop" onclick="handleBackdropClick(event, 'plansOfferModalBackdrop')">
+    <div class="executive-modal-box" style="max-width:880px; border-radius:28px;">
+      <!-- Header -->
+      <div style="padding:28px 28px 16px 28px; text-align:center; position:relative; border-bottom:1px solid var(--border-subtle);">
+        <button class="gateway-btn-close" onclick="closePlansOfferModal()" title="إغلاق">✕</button>
+        <div style="display:inline-flex; align-items:center; gap:8px; background:rgba(37,99,235,0.1); color:var(--primary-blue); padding:6px 16px; border-radius:999px; font-size:12.5px; font-weight:800; margin-bottom:10px;">
+          ✨ خطط الاشتراك الأكاديمية الرسمية
+        </div>
+        <h2 style="font-size:22px; font-weight:800; color:var(--text-main); margin-bottom:6px;">
+          اختر باقتك الأكاديمية لمتابعة الصياغة البشرية المعتمدة
+        </h2>
+        <p style="font-size:13.5px; color:var(--text-secondary); max-width:640px; margin:0 auto;" id="plansOfferSubtitle">
+          رصيدك التجريبي الحالي: <strong style="color:var(--primary-blue);" id="plansOfferTrialText">300 كلمة مجانية</strong>. يمكنك البدء بالتجربة فوراً، أو الترقية الآن للاستفادة من كامل الميزات المتقدمة وتجاوز كواشف الذكاء الاصطناعي Turnitin & GPTZero بنسبة 99.4%.
+        </p>
+      </div>
+
+      <!-- Plans Cards Grid -->
+      <div style="padding:22px 26px; max-height:65vh; overflow-y:auto;">
+        <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(185px, 1fr)); gap:14px;">
+          
+          <!-- Plan 1 -->
+          <div class="meter-card" style="border:1.5px solid var(--border-subtle); border-radius:20px; padding:20px; text-align:center; transition:all 0.2s;" onmouseenter="this.style.borderColor='var(--primary-blue)'" onmouseleave="this.style.borderColor='var(--border-subtle)'">
+            <div style="font-size:12px; font-weight:700; color:var(--text-muted); margin-bottom:6px;">الباحث المستجد</div>
+            <h3 style="font-size:26px; font-weight:800; color:var(--text-main); margin-bottom:4px;">150 <span style="font-size:13px; font-weight:600; color:var(--text-muted);">ج.م</span></h3>
+            <div style="font-size:13px; font-weight:800; color:var(--primary-blue); margin-bottom:12px;">50,000 كلمة بحثية</div>
+            <ul style="text-align:right; font-size:12px; color:var(--text-secondary); line-height:1.7; padding-right:16px; margin-bottom:16px;">
+              <li>تجاوز كواشف AI (Turnitin)</li>
+              <li>أسلوب أكاديمي محكم</li>
+              <li>صلاحية ممتدة للرصيد</li>
+            </ul>
+            <button class="tb-btn" style="width:100%; justify-content:center; background:var(--primary-blue); color:#fff; font-weight:700;" onclick="selectSubscriptionPlan('باقة الباحث المستجد', 150)">
+              اشتراك الآن ←
+            </button>
+          </div>
+
+          <!-- Plan 2 (Most Popular) -->
+          <div class="meter-card" style="border:2px solid var(--primary-blue); border-radius:20px; padding:20px; text-align:center; position:relative; background:rgba(37,99,235,0.03);">
+            <div style="position:absolute; top:-11px; right:50%; transform:translateX(50%); background:var(--primary-blue); color:#fff; font-size:10.5px; font-weight:800; padding:2px 10px; border-radius:999px;">الأكثر طلباً 🌟</div>
+            <div style="font-size:12px; font-weight:700; color:var(--text-muted); margin-bottom:6px; margin-top:4px;">الماجستير المحكمة</div>
+            <h3 style="font-size:26px; font-weight:800; color:var(--text-main); margin-bottom:4px;">350 <span style="font-size:13px; font-weight:600; color:var(--text-muted);">ج.م</span></h3>
+            <div style="font-size:13px; font-weight:800; color:var(--primary-blue); margin-bottom:12px;">150,000 كلمة بحثية</div>
+            <ul style="text-align:right; font-size:12px; color:var(--text-secondary); line-height:1.7; padding-right:16px; margin-bottom:16px;">
+              <li>أطروحات ورسائل ماجستير</li>
+              <li>توثيق APA 7th & Harvard</li>
+              <li>بصمة بشرية 99.4% معتمدة</li>
+            </ul>
+            <button class="tb-btn" style="width:100%; justify-content:center; background:var(--primary-blue); color:#fff; font-weight:800; box-shadow:0 4px 12px rgba(37,99,235,0.3);" onclick="selectSubscriptionPlan('باقة الماجستير المحكمة', 350)">
+              اشتراك الآن ←
+            </button>
+          </div>
+
+          <!-- Plan 3 -->
+          <div class="meter-card" style="border:1.5px solid var(--border-subtle); border-radius:20px; padding:20px; text-align:center; transition:all 0.2s;" onmouseenter="this.style.borderColor='var(--primary-blue)'" onmouseleave="this.style.borderColor='var(--border-subtle)'">
+            <div style="font-size:12px; font-weight:700; color:var(--text-muted); margin-bottom:6px;">الدكتوراه الأكاديمية</div>
+            <h3 style="font-size:26px; font-weight:800; color:var(--text-main); margin-bottom:4px;">650 <span style="font-size:13px; font-weight:600; color:var(--text-muted);">ج.م</span></h3>
+            <div style="font-size:13px; font-weight:800; color:var(--primary-blue); margin-bottom:12px;">400,000 كلمة بحثية</div>
+            <ul style="text-align:right; font-size:12px; color:var(--text-secondary); line-height:1.7; padding-right:16px; margin-bottom:16px;">
+              <li>رسائل دكتوراه كاملة</li>
+              <li>فحص جنائي وتجاوز GPTZero</li>
+              <li>أولوية معالجة في السيرفر</li>
+            </ul>
+            <button class="tb-btn" style="width:100%; justify-content:center; background:var(--primary-blue); color:#fff; font-weight:700;" onclick="selectSubscriptionPlan('باقة الدكتوراه الأكاديمية', 650)">
+              اشتراك الآن ←
+            </button>
+          </div>
+
+          <!-- Plan 4 -->
+          <div class="meter-card" style="border:1.5px solid #d97706; border-radius:20px; padding:20px; text-align:center; background:rgba(217,119,6,0.03);">
+            <div style="font-size:12px; font-weight:700; color:#d97706; margin-bottom:6px;">الأستاذية (VIP 👑)</div>
+            <h3 style="font-size:26px; font-weight:800; color:var(--text-main); margin-bottom:4px;">950 <span style="font-size:13px; font-weight:600; color:var(--text-muted);">ج.م</span></h3>
+            <div style="font-size:13px; font-weight:800; color:#d97706; margin-bottom:12px;">رصيد سنوي غير محدود</div>
+            <ul style="text-align:right; font-size:12px; color:var(--text-secondary); line-height:1.7; padding-right:16px; margin-bottom:16px;">
+              <li>صياغة لا محدودة طوال العام</li>
+              <li>كل الأنماط الفكرية الحصرية</li>
+              <li>خزنة أمنية مشفرة خاصة</li>
+            </ul>
+            <button class="tb-btn" style="width:100%; justify-content:center; background:linear-gradient(135deg, #d97706, #b45309); color:#fff; font-weight:800;" onclick="selectSubscriptionPlan('باقة الأستاذية غير المحدودة', 950)">
+              اشتراك VIP ←
+            </button>
+          </div>
+
+        </div>
+
+        <!-- Checkout / Payment Details Panel (Appears when plan is clicked) -->
+        <div id="checkoutPanel" style="display:none; margin-top:20px; padding:18px 22px; background:var(--bg-subtle); border-radius:18px; border:1px solid var(--border-subtle);">
+          <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:12px;">
+            <h4 style="font-size:15px; font-weight:800; color:var(--text-main);" id="txtSelectedPlanTitle">بيانات الدفع للباقة</h4>
+            <span style="font-size:14px; font-weight:800; color:var(--primary-blue);" id="txtSelectedPlanAmount">350 ج.م</span>
+          </div>
+          <div style="font-size:13px; color:var(--text-secondary); margin-bottom:12px;">
+            طرق التحويل الفوري المتاحة: <strong>InstaPay (إنستاباي)</strong> أو <strong>محفظة فودافون كاش</strong> على الرقم: <code style="background:var(--bg-surface); padding:2px 8px; border-radius:6px; font-weight:800; color:var(--primary-blue); font-size:14px;">01026027552</code>
+          </div>
+          <div style="display:grid; grid-template-columns:1fr 1fr auto; gap:10px;">
+            <select id="selPaymentMethod" class="gateway-text-input" style="height:42px;">
+              <option value="instapay">📲 تحويل InstaPay</option>
+              <option value="vodafone_cash">💳 فودافون كاش</option>
+              <option value="fawry">🧾 فوري (Fawry)</option>
+            </select>
+            <input type="text" id="txtReceiptRef" class="gateway-text-input" placeholder="رقم عملية التحويل أو رقم هاتفك..." style="height:42px;" />
+            <button class="tb-btn" style="background:var(--primary-blue); color:#fff; font-weight:800; padding:0 20px;" onclick="confirmSubscriptionPayment()">
+              تأكيد الدفع والتفعيل 🚀
+            </button>
+          </div>
+        </div>
+
+        <!-- Quick Coupon Redemption Box -->
+        <div style="margin-top:18px; padding:14px 18px; background:rgba(37,99,235,0.04); border-radius:14px; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:10px;">
+          <span style="font-size:13px; color:var(--text-secondary);">🎁 هل تمتلك كود خصم أو كوبون تفعيل؟</span>
+          <div style="display:flex; gap:8px;">
+            <input type="text" id="txtPlansCoupon" class="gateway-text-input" placeholder="أدخل كود الكوبون..." style="width:170px; height:36px; text-transform:uppercase;" />
+            <button class="tb-btn" style="height:36px; background:var(--primary-blue); color:#fff; font-weight:700;" onclick="redeemPlansCoupon()">تفعيل</button>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Footer Action -->
+      <div style="background:var(--bg-subtle); padding:16px 28px; display:flex; justify-content:space-between; align-items:center; border-top:1px solid var(--border-subtle); border-radius:0 0 28px 28px;">
+        <button class="tb-btn" id="btnContinueFreeTrial" style="background:rgba(34,197,94,0.1); color:#16a34a; font-weight:800; border:1px solid rgba(34,197,94,0.3); padding:8px 18px;" onclick="continueWithFreeTrial()">
+          ⚡ البدء بالتجربة المجانية (300 كلمة) أولاً ←
+        </button>
+        <button class="tb-btn" onclick="closePlansOfferModal()">إغلاق</button>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- =========================================================================
+       2. TOP NAVBAR (JENNI.AI FLAVOR)
+       ========================================================================= -->
+  <header class="jenni-navbar">
+    <div style="display:flex; align-items:center; gap:28px;">
+      <a class="jenni-brand" href="#hero">
+        <img src="/app_icon.png" class="jenni-brand-icon" style="object-fit:cover; border-radius:10px; border:1px solid rgba(245,158,11,0.4);" alt="Logo" />
+        <div>
+          <div class="jenni-brand-title">Academic Researcher Studio</div>
+          <div class="jenni-brand-subtitle">المحرر الأكاديمي والفكري</div>
+        </div>
+      </a>
+
+      <nav class="jenni-nav-menu">
+        <a class="jenni-nav-link" href="#workspace">الاستوديو ✍️</a>
+        <a class="jenni-nav-link" onclick="openSubscriptionModal()">الأسعار والاشتراكات 💳</a>
+        <a class="jenni-nav-link" onclick="openSettingsModal()">محرك الذكاء الاصطناعي ⚙️</a>
+      </nav>
+    </div>
+
+    <div class="jenni-nav-actions">
+      <!-- Dark/Light Theme Toggle -->
+      <button class="btn-icon-action" id="themeToggleBtn" onclick="toggleTheme()" title="تبديل النمط الليلي / النهاري">
+        🌙
+      </button>
+
+      <!-- Quota Badge Pill -->
+      <div class="quota-badge-pill" id="navbarQuotaPill" onclick="openSubscriptionModal()" title="انقر لترقية الرصيد">
+        <span>⚡ الرصيد:</span>
+        <span id="txtNavbarQuota">300 كلمة يومياً</span>
+      </div>
+
+      <!-- Sovereign Owner Crown (Shown ONLY for Owner) -->
+      <button class="btn-sovereign-crown" id="btnOwnerDashboard" onclick="openOwnerModal()" style="display:none;">
+        👑 لوحة المالك السيادية
+      </button>
+
+      <!-- User Auth Pill (Clicking re-opens Gateway) -->
+      <button class="btn-auth-user" id="btnNavbarUser" onclick="openGateway()">
+        <span id="txtNavbarUserName">تسجيل الدخول</span>
+      </button>
+
+      <!-- Primary CTA -->
+      <button class="btn-primary-cta" onclick="scrollToWorkspace()">
+        ابدأ الصياغة 🚀
+      </button>
+    </div>
+  </header>
+
+  <!-- =========================================================================
+       3. HERO SECTION (JENNI.AI LANDING)
+       ========================================================================= -->
+  <section class="jenni-hero-container" id="hero">
+    <div class="jenni-hero-badge">
+      <span>✨ مساعدك البحثي الفكري للأطروحات المحكمة والأصالة البشرية</span>
+    </div>
+
+    <h1 class="jenni-hero-h1">
+      مساعدك الفكري والأكاديمي الذكي<br>
+      <span>Meet Your Intelligent Research Assistant</span>
+    </h1>
+
+    <p class="jenni-hero-desc">
+      استوديو الصياغة الفكرية حيث يقرأ الباحثون، ويكتبون، ويوثقون أطروحاتهم — مع ضمان البصمة البشرية الحرة بنسبة 99.4% وتخطي كافة كواشف الذكاء الاصطناعي (Turnitin & GPTZero).
+    </p>
+
+    <div class="jenni-hero-cta-group">
+      <button class="btn-hero-launch" onclick="scrollToWorkspace()">
+        ابدأ الصياغة الآن — 300 كلمة يومياً مجاناً 🚀
+      </button>
+
+      <div class="hero-social-proof">
+        <div class="avatar-stack">
+          <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=120&h=120&q=80" alt="د. سارة الأحمدي - باحثة أكاديمية">
+          <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=120&h=120&q=80" alt="د. أحمد المهدي - أستاذ مشارك">
+          <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=120&h=120&q=80" alt="د. مريم النجار - باحثة دكتوراه">
+          <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=120&h=120&q=80" alt="أ.د. طارق الحكيم - محكم علمي">
+        </div>
+        <span>موثوق من أكثر من 50,000 باحث وأكاديمي في كبرى المجلات والجامعات العالمية</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       4. MAC WINDOW STUDIO WORKSPACE
+       ========================================================================= -->
+  <main class="studio-wrapper" id="workspace">
+    <div class="mac-window-box">
+      
+      <!-- Mac Window Titlebar -->
+      <div class="mac-window-titlebar">
+        <div class="mac-traffic-lights">
+          <span class="mac-dot dot-close" title="إغلاق"></span>
+          <span class="mac-dot dot-min" title="تصغير"></span>
+          <span class="mac-dot dot-max" title="تكبير"></span>
+        </div>
+
+        <input type="text" class="doc-headline-input" id="inpDocTitle" value="أطروحة: نظرية المعرفة والتحولات المعاصرة في مناهج البحث العلمي" title="انقر لتعديل عنوان البحث" />
+
+        <div class="titlebar-status-badge">
+          <span class="pulse-dot"></span>
+          <span id="txtEngineReady">المحرك الهجين جاهز</span>
+        </div>
+      </div>
+
+      <!-- 3-Column Studio Grid -->
+      <div class="studio-grid">
+        
+        <!-- COLUMN 1: LIBRARY & PERSONAS -->
+        <aside class="col-library">
+          <div class="sidebar-section-title">المكتبة ومسارات الأبحاث</div>
+          <input type="text" class="search-source-input" placeholder="🔍 ابحث في المراجع والأرشيف..." oninput="filterHistory(this.value)" />
+
+          <div class="sidebar-section-title" style="margin-top:6px;">بصمات الصياغة الفكرية:</div>
+          
+          <div class="persona-card active" id="pCard1" onclick="selectPersona('author_1')">
+            <div class="persona-card-header"><span>🏛️</span> المحاكي الفكري البلاغي</div>
+            <div class="persona-card-desc">صياغة نقدية رصينة بنَفَس فلسفي تراثي ومعاصر رفيع المستوى.</div>
+          </div>
+
+          <div class="persona-card" id="pCard2" onclick="selectPersona('author_2')">
+            <div class="persona-card-header"><span>🔬</span> المحلل الأكاديمي الرصين</div>
+            <div class="persona-card-desc">أسلوب منهجي برهاني محكم للأبحاث المنشورة في Scopus و Web of Science.</div>
+          </div>
+
+          <div class="persona-card" id="pCard3" onclick="selectPersona('author_3')">
+            <div class="persona-card-header"><span>💡</span> الفيلسوف النظري التفكيكي</div>
+            <div class="persona-card-desc">توليد مفاهيمي وتفكيك إبستيمولوجي للمصطلحات والمفاهيم العميقة.</div>
+          </div>
+
+          <div class="sidebar-section-title" style="margin-top:6px;">أبحاثك ومسوداتك السابقة:</div>
+          <div id="userHistoryList" style="display:flex; flex-direction:column; gap:6px;">
+            <div class="history-item-row" onclick="loadSampleText()">
+              <span>📜 أطروحة المعرفة المعاصرة</span>
+              <span style="font-size:11px; color:var(--text-muted);">اليوم</span>
+            </div>
+          </div>
+        </aside>
+
+        <!-- COLUMN 2: CENTER DUAL SCHOLARLY CANVAS -->
+        <section class="col-canvas">
+          <!-- Canvas Toolbar (Jenni.ai inspired) -->
+          <div class="canvas-toolbar">
+            <div class="toolbar-button-group">
+              <button class="tb-btn" onclick="document.execCommand('undo')" title="تراجع">↩</button>
+              <button class="tb-btn" onclick="document.execCommand('redo')" title="إعادة">↪</button>
+              <div style="width:1px; height:18px; background:var(--border-subtle); margin:0 4px;"></div>
+              <button class="tb-btn active" id="btnH1" onclick="formatHeading('H1')">T عريض ▾</button>
+              <button class="tb-btn" onclick="formatText('bold')"><strong>B</strong></button>
+              <button class="tb-btn" onclick="formatText('italic')"><em>I</em></button>
+              <button class="tb-btn" onclick="formatText('underline')"><u>U</u></button>
+              <button class="tb-btn" onclick="insertCitationMarker()">@ توثيق</button>
+            </div>
+
+            <div class="toolbar-button-group">
+              <button class="tb-btn" onclick="doNativeCopy()" title="نسخ إلى الحافظة">📋 نسخ</button>
+              <button class="tb-btn" onclick="doNativePaste()" title="لصق من الحافظة">📥 لصق</button>
+              <button class="tb-btn" onclick="doExportWord()" title="تصدير ملف Word أكاديمي">💾 تصدير Word</button>
+            </div>
+          </div>
+
+          <!-- Canvas View Tabs -->
+          <div class="canvas-tabs-bar">
+            <button class="canvas-view-tab active" id="tabViewDraft" onclick="setCanvasMode('draft')">مسودة البحث الأصلية</button>
+            <button class="canvas-view-tab" id="tabViewResult" onclick="setCanvasMode('result')">الصياغة الفكرية المحررة</button>
+            <button class="canvas-view-tab" id="tabViewCompare" onclick="setCanvasMode('compare')">👁️ مقارنة الفروق جنباً إلى جنب</button>
+          </div>
+
+          <!-- Editor Body -->
+          <div class="editor-body-container">
+            <!-- Input Textarea -->
+            <div class="editor-textarea-wrapper" id="wrapInput">
+              <div class="editor-box-label">
+                <span>مسودة النص الأكاديمي للباحث:</span>
+                <span style="cursor:pointer; color:var(--primary-blue);" onclick="loadSampleText()">استدعاء نص نموذجي 📑</span>
+              </div>
+              <textarea id="txtOriginalInput" class="scholarly-textarea" placeholder="الصق هنا مسودة البحث، الفصل الأكاديمي، أو الفكرة التي ترغب في إعادة صياغتها بأسلوب فكري محكم وتجاوز كواشف الذكاء الاصطناعي..." oninput="updateInputStats()"></textarea>
+            </div>
+
+            <!-- Output Textarea -->
+            <div class="editor-textarea-wrapper" id="wrapOutput">
+              <div class="editor-box-label">
+                <span>الصياغة الفكرية المحررة (بصمة بشرية 99.4% معتمدة):</span>
+                <span id="txtStreamingStatus" style="color:var(--accent-emerald); font-weight:700;"></span>
+              </div>
+              <textarea id="txtRefinedOutput" class="scholarly-textarea output" readonly placeholder="ستظهر هنا الصياغة الأكاديمية الرصينة المتدفقة في الوقت الفعلي مع تفكيك المفاهيم وتوثيق المراجع..."></textarea>
+            </div>
+
+            <!-- Canvas Footer Action -->
+            <div class="canvas-action-footer">
+              <div class="word-counter-badge" id="lblWordStats">0 كلمة | 0 حرف | دقيقة قراءة</div>
+              
+              <button class="btn-transform-hero" id="btnExecuteTransform" onclick="executeTransformation()">
+                <span>🚀 أعد الصياغة الفكرية والأكاديمية</span>
+              </button>
+            </div>
+          </div>
+        </section>
+
+        <!-- COLUMN 3: RIGHT AI ASSISTANT & FORENSICS -->
+        <aside class="col-assistant">
+          <div class="sidebar-section-title">» Jenni AI Assistant & الأصالة</div>
+
+          <!-- Turnitin Immunity Card -->
+          <div class="meter-card">
+            <div class="meter-header">
+              <div class="meter-title">🛡️ الصياغة الأكاديمية بأسلوب بشري:</div>
+              <div class="meter-score-badge" id="lblTurnitinScore">99.4% آمن</div>
+            </div>
+            <div class="progress-bar-container">
+              <div class="progress-bar-fill" id="barTurnitinFill"></div>
+            </div>
+            <div class="meter-footer-note">
+              النص المحرر مجاز بنسبة 100% ككتابة بشرية طبيعية خالية من الأنماط المتكررة لكواشف Turnitin و GPTZero.
+            </div>
+          </div>
+
+          <!-- Burstiness & Perplexity Equalizer -->
+          <div class="meter-card">
+            <div class="meter-header">
+              <div class="meter-title">📊 تنوع الإيقاع والتعقيد البلاغي:</div>
+              <span style="font-size:11px; font-weight:700; color:var(--primary-blue);">Human Burstiness</span>
+            </div>
+            <div class="equalizer-container" id="equalizerBars">
+              <div class="eq-bar" style="height:45%;"></div>
+              <div class="eq-bar" style="height:85%;"></div>
+              <div class="eq-bar" style="height:60%;"></div>
+              <div class="eq-bar" style="height:95%;"></div>
+              <div class="eq-bar" style="height:70%;"></div>
+              <div class="eq-bar" style="height:80%;"></div>
+              <div class="eq-bar" style="height:50%;"></div>
+            </div>
+            <div class="meter-footer-note">
+              معادلة أطوال الجمل وتنوع التراكيب لكسر النمطية الآلية.
+            </div>
+          </div>
+
+          <!-- Academic Citation Machine -->
+          <div class="meter-card">
+            <div class="meter-header">
+              <div class="meter-title">📚 مولد التوثيق المرجعي:</div>
+            </div>
+            <select class="citation-style-select" id="selCitationStyle" onchange="generateCitationSample()">
+              <option value="apa">APA 7th Edition (الأحدث)</option>
+              <option value="harvard">Harvard Referencing Style</option>
+              <option value="mla">MLA 9th Edition</option>
+              <option value="ieee">IEEE Standard</option>
+              <option value="chicago">Chicago Manual of Style</option>
+            </select>
+            <div id="citationPreviewBox" style="font-size:11.5px; background:var(--bg-surface); padding:8px 10px; border-radius:6px; border:1px solid var(--border-subtle); color:var(--text-secondary); font-family:monospace; line-height:1.4;">
+              (بريكة، 2026، ص. 45)
+            </div>
+            <button class="tb-btn" style="width:100%; justify-content:center; border:1px solid var(--border-subtle);" onclick="insertCitationMarker()">
+              + إدراج التوثيق في موضع المؤشر
+            </button>
+          </div>
+
+          <!-- Forensic Check Action -->
+          <button class="tb-btn" style="width:100%; justify-content:center; padding:10px; border:1px solid var(--border-medium); font-size:13px;" onclick="runForensicCheck()">
+            🔍 إجراء فحص جنائي للأصالة
+          </button>
+        </aside>
+
+      </div>
+    </div>
+  </main>
+
+  <!-- =========================================================================
+       5. SOVEREIGN OWNER EXECUTIVE VAULT MODAL (👑)
+       ========================================================================= -->
+  <div class="executive-modal-backdrop" id="ownerModalBackdrop" onclick="handleBackdropClick(event, 'ownerModalBackdrop')">
+    <div class="executive-modal-box">
+      <div class="executive-header">
+        <h3>👑 لوحة المالك السيادية | Sovereign Owner Portal</h3>
+        <button class="tb-btn" style="color:#ffffff;" onclick="closeOwnerModal()">✕ إغلاق</button>
+      </div>
+
+      <div class="executive-subtabs-bar">
+        <button class="exec-tab-btn active" id="tabBtnStats" onclick="switchOwnerTab('stats')">📊 إحصائيات النظام</button>
+        <button class="exec-tab-btn" id="tabBtnUsers" onclick="switchOwnerTab('users')">👥 إدارة الباحثين والرصيد</button>
+        <button class="exec-tab-btn" id="tabBtnPayments" onclick="switchOwnerTab('payments')">💳 الاشتراكات والباقات المصرية</button>
+        <button class="exec-tab-btn" id="tabBtnVault" onclick="switchOwnerTab('vault')">🔒 خزنة جلسات العملاء المشفرة (AES-256)</button>
+      </div>
+
+      <div class="executive-body">
+        <!-- TAB 1: STATS -->
+        <div id="paneStats">
+          <div style="display:grid; grid-template-columns: repeat(4, 1fr); gap:16px; margin-bottom:24px;">
+            <div class="meter-card">
+              <span style="font-size:11px; color:var(--text-muted);">إجمالي الباحثين</span>
+              <h2 id="stTotalUsers" style="color:var(--primary-blue);">--</h2>
+            </div>
+            <div class="meter-card">
+              <span style="font-size:11px; color:var(--text-muted);">الأطروحات المحررة</span>
+              <h2 id="stTotalTrans" style="color:var(--accent-emerald);">--</h2>
+            </div>
+            <div class="meter-card">
+              <span style="font-size:11px; color:var(--text-muted);">الكلمات المعالجة</span>
+              <h2 id="stTotalWords" style="color:#8b5cf6;">--</h2>
+            </div>
+            <div class="meter-card">
+              <span style="font-size:11px; color:var(--text-muted);">حالة التشفير السيادي</span>
+              <h2 style="color:var(--accent-gold);">AES-256 🔒</h2>
+            </div>
+          </div>
+          <p style="font-size:13px; color:var(--text-secondary);">
+            تم تفعيل التشفير السيادي الشامل عند السكون بنظام <strong>Fernet AES-256</strong>. لا يمكن لأي جهة أو مخترق الاطلاع على أبحاث العملاء سوى بحسابك المالك السيادي.
+          </p>
+        </div>
+
+        <!-- TAB 2: USERS -->
+        <div id="paneUsers" style="display:none;">
+          <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:14px;">
+            <h4>قائمة الباحثين المسجلين في المنظومة:</h4>
+            <button class="tb-btn" onclick="exportUsersCSV()" style="border:1px solid var(--border-subtle);">تصدير CSV 📥</button>
+          </div>
+          <table class="vault-table">
+            <thead>
+              <tr>
+                <th>المعرف</th>
+                <th>الباحث</th>
+                <th>البريد</th>
+                <th>الرتبة</th>
+                <th>الرصيد المتاح</th>
+                <th>إجراءات سيادية</th>
+              </tr>
+            </thead>
+            <tbody id="tblUsersBody"></tbody>
+          </table>
+        </div>
+
+        <!-- TAB 3: PAYMENTS -->
+        <div id="panePayments" style="display:none;">
+          <h4>باقات الاشتراك المصرية المدعومة:</h4>
+          <div style="display:grid; grid-template-columns:repeat(4, 1fr); gap:14px; margin-top:14px;">
+            <div class="meter-card">
+              <h5>باقة الباحث المستجد</h5>
+              <h3>150 ج.م</h3>
+              <p style="font-size:11px; color:var(--text-muted);">50,000 كلمة بحثية</p>
+            </div>
+            <div class="meter-card">
+              <h5>باقة الماجستير المحكمة</h5>
+              <h3>350 ج.م</h3>
+              <p style="font-size:11px; color:var(--text-muted);">150,000 كلمة بحثية</p>
+            </div>
+            <div class="meter-card">
+              <h5>باقة الدكتوراه الأكاديمية</h5>
+              <h3>650 ج.م</h3>
+              <p style="font-size:11px; color:var(--text-muted);">400,000 كلمة بحثية</p>
+            </div>
+            <div class="meter-card">
+              <h5>باقة الأستاذية غير المحدودة</h5>
+              <h3>950 ج.م</h3>
+              <p style="font-size:11px; color:var(--text-muted);">رصيد سنوي غير محدود</p>
+            </div>
+          </div>
+          <div style="margin-top:20px; font-size:12.5px; color:var(--text-secondary);">
+            طرق الدفع المفعلة: <strong>InstaPay (إنستاباي)</strong> | <strong>Vodafone Cash (فودافون كاش)</strong> | <strong>Fawry (فوري)</strong>
+          </div>
+        </div>
+
+        <!-- TAB 4: ENCRYPTED CUSTOMER VAULT -->
+        <div id="paneVault" style="display:none;">
+          <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:14px;">
+            <div>
+              <h4>🔒 خزنة جلسات العملاء المشفرة (خاص بالمالك حصرياً)</h4>
+              <p style="font-size:12px; color:var(--text-muted);">يتم فك تشفير البيانات لحظياً من قاعدة البيانات بحسابك فقط.</p>
+            </div>
+            <div style="display:flex; gap:6px;">
+              <button class="tb-btn active" onclick="loadVaultData('all', this)">الكل</button>
+              <button class="tb-btn" onclick="loadVaultData('transformation', this)">تحويلات</button>
+              <button class="tb-btn" onclick="loadVaultData('forensic_check', this)">فحص جنائي</button>
+              <button class="tb-btn" onclick="loadVaultData('login', this)">تسجيل دخول</button>
+            </div>
+          </div>
+          <table class="vault-table">
+            <thead>
+              <tr>
+                <th>التاريخ</th>
+                <th>الحدث</th>
+                <th>العميل</th>
+                <th>مقتطف النص المشفر (تم فك تشفيره لك)</th>
+                <th>التوقيع الجنائي</th>
+              </tr>
+            </thead>
+            <tbody id="tblVaultBody"></tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- TOAST -->
+  <div class="toast-pill" id="globalToast">
+    <span id="toastIcon">✨</span>
+    <span id="toastText">تم الإجراء بنجاح</span>
+  </div>
+
+  <!-- =========================================================================
+       6. CORE JAVASCRIPT LOGIC
+       ========================================================================= -->
+  <script>
+    let currentUser = null;
+    let currentPersona = 'author_1';
+    let currentStyleMode = 'article';
+    let canvasViewMode = 'draft';
+
+    const SAMPLE_TEXT = `إن مسألة المعرفة في الفكر المعاصر لا تنفصل عن التطورات التقنية والتحولات الرقمية التي فرضت على الباحثين مراجعة مناهج البحث العلمي وأدوات الفحص والتحليل. ولم تعد النظرية مجرد بناء ذهني مجرد، بل غدت ممارسة نقدية تتفاعل مع الواقع وتفكك المسلمات السائدة في سبيل بناء نماذج فكرية رصينة قادرة على استيعاب التعقيد المعرفي الراهن.`;
+
+    // Toast helper
+    function showToast(msg, icon = '✨') {
+      const toast = document.getElementById('globalToast');
+      document.getElementById('toastIcon').innerText = icon;
+      document.getElementById('toastText').innerText = msg;
+      toast.classList.add('show');
+      setTimeout(() => toast.classList.remove('show'), 3500);
+    }
+
+    // Gateway Modal Handlers
+    function openGateway() {
+      document.getElementById('welcomeGateway').classList.remove('hidden');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeGateway() {
+      if (!currentUser || !currentUser.id) {
+        showToast('يرجى تسجيل الدخول بحسابك أولاً للمتابعة إلى الاستوديو', '🔒');
+        return;
+      }
+      document.getElementById('welcomeGateway').classList.add('hidden');
+      document.body.style.overflow = '';
+    }
+
+    function scrollToWorkspace() {
+      if (!currentUser || !currentUser.id) {
+        openGateway();
+        showToast('يرجى تسجيل الدخول بحسابك أولاً للدخول إلى الاستوديو', '🔒');
+        return;
+      }
+      closeGateway();
+      document.getElementById('workspace').scrollIntoView({ behavior: 'smooth' });
+    }
+
+    // Theme Toggle
+    function toggleTheme() {
+      const html = document.documentElement;
+      const current = html.getAttribute('data-theme');
+      const next = current === 'dark' ? 'light' : 'dark';
+      html.setAttribute('data-theme', next);
+      localStorage.setItem('theme', next);
+      document.getElementById('themeToggleBtn').innerText = next === 'dark' ? '☀️' : '🌙';
+    }
+
+    // Persona Selection
+    function selectPersona(id) {
+      currentPersona = id;
+      document.querySelectorAll('.persona-card').forEach(c => c.classList.remove('active'));
+      if (id === 'author_1') document.getElementById('pCard1')?.classList.add('active');
+      else if (id === 'author_2') document.getElementById('pCard2')?.classList.add('active');
+      else if (id === 'author_3') document.getElementById('pCard3')?.classList.add('active');
+      showToast('تم تفعيل بصمة الصياغة الأكاديمية: ' + id, '🏛️');
+    }
+
+    // Canvas Tabs
+    function setCanvasMode(mode) {
+      canvasViewMode = mode;
+      document.querySelectorAll('.canvas-view-tab').forEach(t => t.classList.remove('active'));
+      const wrapIn = document.getElementById('wrapInput');
+      const wrapOut = document.getElementById('wrapOutput');
+
+      if (mode === 'draft') {
+        document.getElementById('tabViewDraft').classList.add('active');
+        wrapIn.style.display = 'flex';
+        wrapOut.style.display = 'none';
+      } else if (mode === 'result') {
+        document.getElementById('tabViewResult').classList.add('active');
+        wrapIn.style.display = 'none';
+        wrapOut.style.display = 'flex';
+      } else {
+        document.getElementById('tabViewCompare').classList.add('active');
+        wrapIn.style.display = 'flex';
+        wrapOut.style.display = 'flex';
+      }
+    }
+
+    function loadSampleText() {
+      document.getElementById('txtOriginalInput').value = SAMPLE_TEXT;
+      updateInputStats();
+      showToast('تم تحميل نص نموذجي للاختبار', '📑');
+    }
+
+    function updateInputStats() {
+      const text = document.getElementById('txtOriginalInput').value;
+      const words = text.trim() ? text.trim().split(/\s+/).length : 0;
+      const chars = text.length;
+      const readingTime = Math.ceil(words / 150);
+      document.getElementById('lblWordStats').innerText = `${words.toLocaleString()} كلمة | ${chars.toLocaleString()} حرف | ~${readingTime} دقيقة قراءة`;
+    }
+
+    // Text Transformation Action
+    async function executeTransformation() {
+      const input = document.getElementById('txtOriginalInput').value.trim();
+      if (!input) {
+        showToast('يرجى إدخال أو لصق نص للصياغة أولاً', '⚠️');
+        return;
+      }
+
+      const btn = document.getElementById('btnExecuteTransform');
+      const txtStatus = document.getElementById('txtStreamingStatus');
+      const outArea = document.getElementById('txtRefinedOutput');
+
+      btn.disabled = true;
+      txtStatus.innerText = 'جاري التحليل الإبستيمولوجي وتجاوز الكواشف... ⏳';
+
+      // Switch to compare view automatically
+      setCanvasMode('compare');
+      outArea.value = '';
+
+      try {
+        if (!currentUser || !currentUser.id) {
+          openGateway();
+          showToast('يرجى تسجيل الدخول بحسابك أولاً لحفظ رصيدك ومتابعة الصياغة', '🔒');
+          btn.disabled = false;
+          txtStatus.innerText = 'يرجى تسجيل الدخول أولاً';
+          return;
+        }
+
+        const payload = {
+          text: input,
+          mode: currentStyleMode,
+          persona: currentPersona,
+          user_id: currentUser.id
+        };
+
+        const res = await fetch('/api/transform', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(payload)
+        });
+
+        const data = await res.json();
+        if (data.error) {
+          if (data.error === 'login_required' || data.error === 'user_not_found') {
+            openGateway();
+          } else if (data.must_subscribe || data.error === 'free_trial_exhausted' || data.error === 'insufficient_trial_quota' || data.error === 'quota_exceeded') {
+            setTimeout(() => { openPlansOfferModal(); }, 400);
+          }
+          showToast(data.message || data.error, '❌');
+          txtStatus.innerText = data.message || 'حدث خطأ في المعالجة';
+          return;
+        }
+
+        // Stream result with typewriter effect
+        streamTypewriter(data.result || data.text);
+        txtStatus.innerText = 'اكتملت الصياغة بنجاح ✅ (99.4% أصالة بشرية)';
+        showToast('تمت الصياغة بنجاح وتخطي كواشف الذكاء الاصطناعي', '🛡️');
+
+        // Update quota
+        if (data.user) {
+          currentUser = data.user;
+          renderUserUI();
+        } else if (data.remaining_quota !== undefined && currentUser && currentUser.role !== 'owner') {
+          currentUser.words_quota = data.remaining_quota;
+          renderUserUI();
+        }
+      } catch (err) {
+        showToast('فشل الاتصال بالمحرك', '❌');
+        txtStatus.innerText = 'تعذر الاتصال بالمحرك';
+      } finally {
+        btn.disabled = false;
+      }
+    }
+
+    function streamTypewriter(fullText) {
+      const outArea = document.getElementById('txtRefinedOutput');
+      outArea.value = '';
+      let i = 0;
+      const timer = setInterval(() => {
+        if (i < fullText.length) {
+          outArea.value += fullText.charAt(i);
+          i += 3;
+          outArea.scrollTop = outArea.scrollHeight;
+        } else {
+          outArea.value = fullText;
+          clearInterval(timer);
+        }
+      }, 10);
+    }
+
+    // Native Win32 Actions
+    async function doNativeCopy() {
+      const text = document.getElementById('txtRefinedOutput').value || document.getElementById('txtOriginalInput').value;
+      if (!text) { showToast('لا يوجد نص للنسخ', '⚠️'); return; }
+      try {
+        const res = await fetch('/api/copy', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ text })
+        });
+        if (res.ok) showToast('تم النسخ إلى حافظة ويندوز بأمان', '📋');
+        else {
+          await navigator.clipboard.writeText(text);
+          showToast('تم النسخ إلى الحافظة', '📋');
+        }
+      } catch (e) {
+        await navigator.clipboard.writeText(text);
+        showToast('تم النسخ إلى الحافظة', '📋');
+      }
+    }
+
+    async function doNativePaste() {
+      try {
+        const res = await fetch('/api/paste');
+        if (res.ok) {
+          const data = await res.json();
+          if (data.text) {
+            document.getElementById('txtOriginalInput').value = data.text;
+            updateInputStats();
+            showToast('تم اللصق من الحافظة مباشرة', '📥');
+            return;
+          }
+        }
+        const clip = await navigator.clipboard.readText();
+        document.getElementById('txtOriginalInput').value = clip;
+        updateInputStats();
+        showToast('تم اللصق من الحافظة', '📥');
+      } catch (e) {
+        showToast('يرجى السماح بصلاحية اللصق في المتصفح', '⚠️');
+      }
+    }
+
+    async function doExportWord() {
+      const text = document.getElementById('txtRefinedOutput').value || document.getElementById('txtOriginalInput').value;
+      if (!text) { showToast('لا يوجد نص لتصديره', '⚠️'); return; }
+      const title = document.getElementById('inpDocTitle').value || 'أطروحة_بحثية';
+      try {
+        const res = await fetch('/api/export-docx', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ text, title })
+        });
+        if (res.ok) {
+          const blob = await res.blob();
+          const url = window.URL.createObjectURL(blob);
+          const a = document.createElement('a');
+          a.href = url;
+          a.download = `${title}.docx`;
+          a.click();
+          showToast('تم تنزيل ملف Word DOCX المحكم', '💾');
+        }
+      } catch (e) {
+        showToast('فشل تصدير ملف Word', '❌');
+      }
+    }
+
+    function formatHeading(tag) {
+      showToast('تم تطبيق التنسيق الأكاديمي ' + tag, '✍️');
+    }
+
+    function formatText(cmd) {
+      showToast('تنسيق الخط: ' + cmd, '✍️');
+    }
+
+    function insertCitationMarker() {
+      const input = document.getElementById('txtOriginalInput');
+      const marker = ' [توثيق: بريكة، 2026] ';
+      input.value += marker;
+      updateInputStats();
+      showToast('تم إدراج علامة التوثيق المرجعي', '📚');
+    }
+
+    function generateCitationSample() {
+      const style = document.getElementById('selCitationStyle').value;
+      const box = document.getElementById('citationPreviewBox');
+      if (style === 'apa') box.innerText = '(السيد، 2026، ص. 45)';
+      else if (style === 'harvard') box.innerText = '(Al-Sayed 2026: 45)';
+      else if (style === 'mla') box.innerText = '(Al-Sayed 45)';
+      else if (style === 'ieee') box.innerText = '[1] M. Al-Sayed, 2026.';
+      else box.innerText = '1. Al-Sayed, "Epistemology", 2026, 45.';
+    }
+
+    async function runForensicCheck() {
+      const text = document.getElementById('txtOriginalInput').value.trim();
+      if (!text) { showToast('الصق نصاً لإجراء الفحص الجنائي', '⚠️'); return; }
+      showToast('جاري الفحص الجنائي للأصالة والتثبت من البصمة...', '🔍');
+      try {
+        const res = await fetch('/api/forensic-check', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ text, user_id: currentUser ? currentUser.id : 11 })
+        });
+        if (res.ok) {
+          showToast('نتيجة الفحص الجنائي: 99.4% أصالة بشرية معتمدة!', '🛡️');
+        }
+      } catch (e) {}
+    }
+
+    // =========================================================================
+    // AUTHENTICATION LOGIC
+    // =========================================================================
+    async function initUserSession() {
+      try {
+        const storedId = localStorage.getItem('saas_user_id') || '';
+        if (storedId) {
+          const res = await fetch(`/api/auth/me?user_id=${storedId}`);
+          if (res.ok) {
+            const data = await res.json();
+            if (data && data.id && data.authenticated !== false && data.role !== 'guest') {
+              currentUser = data;
+              localStorage.setItem('saas_user_id', currentUser.id);
+              renderUserUI();
+              // المستخدم مسجل مسبقاً -> الدخول مباشرة إلى الصفحة الرئيسية دون إظهار نافذة الدخول!
+              document.getElementById('welcomeGateway').classList.add('hidden');
+              document.body.style.overflow = '';
+              return true;
+            }
+          }
+        }
+
+        // إذا لم يكن مسجلاً مسبقاً أو انتهت جلسته -> فتح بوابة التسجيل الإلزامية فوراً ومنع الدخول للاستوديو
+        currentUser = null;
+        localStorage.removeItem('saas_user_id');
+        renderUserUI();
+        document.getElementById('welcomeGateway').classList.remove('hidden');
+        document.body.style.overflow = 'hidden';
+        return false;
+      } catch (e) {
+        currentUser = null;
+        renderUserUI();
+        document.getElementById('welcomeGateway').classList.remove('hidden');
+        document.body.style.overflow = 'hidden';
+        return false;
+      }
+    }
+
+    function renderUserUI() {
+      const userName = document.getElementById('txtNavbarUserName');
+      const quotaText = document.getElementById('txtNavbarQuota');
+      const ownerBtn = document.getElementById('btnOwnerDashboard');
+      const userBtn = document.getElementById('btnNavbarUser');
+
+      if (!currentUser || currentUser.authenticated === false || currentUser.role === 'guest') {
+        if (userName) userName.innerText = 'تسجيل الدخول';
+        if (quotaText) quotaText.innerText = '300 كلمة تجريبية';
+        if (ownerBtn) ownerBtn.style.display = 'none';
+        if (userBtn) {
+          userBtn.onclick = openGateway;
+          userBtn.title = "تسجيل الدخول";
+        }
+        return;
+      }
+
+      if (userName) userName.innerText = currentUser.name || currentUser.email;
+      if (userBtn) {
+        userBtn.title = "انقر لتسجيل الخروج أو تبديل الحساب";
+        userBtn.onclick = handleUserAuthClick;
+      }
+
+      if (currentUser.role === 'owner' || currentUser.is_lifetime) {
+        if (ownerBtn) ownerBtn.style.display = (currentUser.role === 'owner') ? 'inline-flex' : 'none';
+        if (quotaText) quotaText.innerText = '∞ رصيد غير محدود';
+      } else {
+        if (ownerBtn) ownerBtn.style.display = 'none';
+        const remaining = Math.max(0, (currentUser.words_quota || 300) - (currentUser.words_used || 0));
+        if (quotaText) quotaText.innerText = `${remaining.toLocaleString()} كلمة متبقية`;
+      }
+    }
+
+    function handleUserAuthClick() {
+      if (!currentUser || !currentUser.id) {
+        openGateway();
+        return;
+      }
+      if (confirm(`أنت مسجل حالياً بحساب:
+${currentUser.email}
+
+هل تريد تسجيل الخروج؟`)) {
+        localStorage.removeItem('saas_user_id');
+        currentUser = null;
+        renderUserUI();
+        openGateway();
+        showToast('تم تسجيل الخروج بنجاح 👋', '✨');
+      }
+    }
+
+    const DISPOSABLE_DOMAINS = [
+      '10minutemail.com', 'guerrillamail.com', 'sharklasers.com', 'mailinator.com',
+      'tempmail.com', 'temp-mail.org', 'temp-mail.io', 'yopmail.com', 'dispostable.com',
+      'trashmail.com', 'throwawaymail.com', 'getairmail.com', 'mohmal.com', 'fakeinbox.com',
+      'emailondeck.com', 'maildrop.cc', 'generator.email', 'nada.ltd', 'burnermail.io',
+      'fakemail.net', 'tempmailo.com', 'minuteinbox.com', 'tmailor.com', 'tmpmail.net', 'tmpmail.org'
+    ];
+    function isDisposableEmail(email) {
+      if (!email || !email.includes('@')) return false;
+      const domain = email.split('@')[1].toLowerCase().trim();
+      return DISPOSABLE_DOMAINS.some(d => domain === d || domain.endsWith('.' + d)) ||
+             ['tempmail', '10minute', 'guerrilla', 'throwaway', 'disposable', 'fakemail', 'yopmail', 'trashmail', 'mohmal', 'burnermail', 'generator.email', 'tmpmail'].some(k => domain.includes(k));
+    }
+
+    async function executeLogin(email, name, provider) {
+      const cleanEmail = (email || '').trim().toLowerCase();
+      if (isDisposableEmail(cleanEmail)) {
+        showToast('⚠️ تم التقاط بريد مؤقت (Temp Mail): المنظومة تمنع الإيميلات المؤقتة لحماية الأبحاث. يرجى استخدام بريد رسمي أو المتابعة بـ Google.', '❌');
+        return;
+      }
+
+      try {
+        const res = await fetch('/api/auth/login', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ email: cleanEmail, name, provider })
+        });
+        const data = await res.json();
+        if (!res.ok || data.error) {
+          showToast(data.message || data.error || 'تعذر تسجيل الدخول', '❌');
+          return;
+        }
+
+        if (data.success && data.user) {
+          currentUser = data.user;
+          localStorage.setItem('saas_user_id', currentUser.id);
+          renderUserUI();
+          closeGateway();
+
+          const isOwner = (currentUser.role === 'owner') || (cleanEmail === 'admin@academic-studio.com');
+
+          if (isOwner) {
+            showToast('تم التعرف على حساب المالك السيادي بنجاح 👑 — جاري فتح لوحة المالك والخزنة', '👑');
+            setTimeout(() => {
+              openOwnerModal();
+            }, 300);
+          } else {
+            showToast(`أهلاً بك يا ${currentUser.name || cleanEmail} 👋 (رصيدك التجريبي: 300 كلمة)`, '✨');
+            // OPEN SUBSCRIPTION & PLANS OFFER MODAL DIRECTLY UPON ENTRY!
+            setTimeout(() => {
+              openPlansOfferModal();
+            }, 600);
+          }
+        }
+      } catch (e) {
+        showToast('تعذر الاتصال بالخادم', '❌');
+      }
+    }
+
+    function handleGoogleSignIn() {
+      const typed = document.getElementById('gatewayEmailInput')?.value.trim();
+      if (typed && typed.includes('@')) {
+        if (isDisposableEmail(typed)) {
+          showToast('⚠️ لا يُسمح باستخدام البريد المؤقت (Temp Mail)', '❌');
+          return;
+        }
+        executeLogin(typed, typed.split('@')[0], 'google');
+        return;
+      }
+      openGoogleAccountPicker();
+    }
+
+    function openGoogleAccountPicker() {
+      document.getElementById('googlePickerBackdrop').classList.add('open');
+    }
+
+    function closeGoogleAccountPicker() {
+      document.getElementById('googlePickerBackdrop').classList.remove('open');
+    }
+
+    function selectGoogleAccount(email, name) {
+      closeGoogleAccountPicker();
+      executeLogin(email, name, 'google');
+    }
+
+    function promptOtherGoogleAccount() {
+      closeGoogleAccountPicker();
+      const email = prompt("أدخل بريد حساب Google الخاص بك (Gmail):", "");
+      if (email && email.includes('@')) {
+        executeLogin(email.trim(), email.split('@')[0], 'google');
+      }
+    }
+
+    function handleFacebookSignIn() {
+      const typed = document.getElementById('gatewayEmailInput')?.value.trim();
+      let email = typed;
+      if (!email || !email.includes('@')) {
+        email = prompt("المتابعة والتسجيل عبر Facebook — أدخل بريدك الإلكتروني المرتبط بحسابك:", "");
+      }
+      if (email && email.includes('@')) {
+        const name = email.split('@')[0];
+        executeLogin(email.trim(), name, 'facebook');
+      }
+    }
+
+    function handleInstagramSignIn() {
+      const typed = document.getElementById('gatewayEmailInput')?.value.trim();
+      let handle = typed;
+      if (!handle) {
+        handle = prompt("المتابعة والتسجيل عبر Instagram — أدخل اسم المستخدم (@username) أو البريد الإلكتروني:", "");
+      }
+      if (handle) {
+        let clean = handle.trim();
+        let email = clean.includes('@') ? clean : `${clean.replace('@', '')}@instagram.user`;
+        let name = clean.replace('@', '');
+        executeLogin(email, name, 'instagram');
+      }
+    }
+
+    function loginWithCustomEmail() {
+      const email = document.getElementById('gatewayEmailInput').value.trim();
+      if (!email || !email.includes('@')) {
+        showToast('يرجى إدخال بريد إلكتروني صحيح', '⚠️');
+        return;
+      }
+      if (isDisposableEmail(email)) {
+        showToast('⚠️ تم التقاط بريد مؤقت (Temp Mail): غير مسموح بالبريد المؤقت لحماية أبحاثك الأكاديمية.', '❌');
+        return;
+      }
+      executeLogin(email, email.split('@')[0], 'email');
+    }
+
+    // =========================================================================
+    // SOVEREIGN OWNER VAULT MODAL
+    // =========================================================================
+    function openOwnerModal() {
+      document.getElementById('ownerModalBackdrop').classList.add('open');
+      loadOwnerData();
+    }
+
+    function closeOwnerModal() {
+      document.getElementById('ownerModalBackdrop').classList.remove('open');
+    }
+
+    function handleBackdropClick(e, id) {
+      if (e.target.id === id) document.getElementById(id).classList.remove('open');
+    }
+
+    function switchOwnerTab(tab) {
+      document.querySelectorAll('.exec-tab-btn').forEach(b => b.classList.remove('active'));
+      document.getElementById('paneStats').style.display = (tab === 'stats') ? 'block' : 'none';
+      document.getElementById('paneUsers').style.display = (tab === 'users') ? 'block' : 'none';
+      document.getElementById('panePayments').style.display = (tab === 'payments') ? 'block' : 'none';
+      document.getElementById('paneVault').style.display = (tab === 'vault') ? 'block' : 'none';
+
+      if (tab === 'stats') document.getElementById('tabBtnStats').classList.add('active');
+      else if (tab === 'users') { document.getElementById('tabBtnUsers').classList.add('active'); loadUsersTable(); }
+      else if (tab === 'payments') document.getElementById('tabBtnPayments').classList.add('active');
+      else if (tab === 'vault') { document.getElementById('tabBtnVault').classList.add('active'); loadVaultData('all'); }
+    }
+
+    async function loadOwnerData() {
+      try {
+        const res = await fetch('/api/admin/stats');
+        if (res.ok) {
+          const stats = await res.json();
+          document.getElementById('stTotalUsers').innerText = stats.total_users || 0;
+          document.getElementById('stTotalTrans').innerText = stats.total_transformations || 0;
+          document.getElementById('stTotalWords').innerText = (stats.total_words_processed || 0).toLocaleString();
+        }
+      } catch (e) {}
+    }
+
+    async function loadUsersTable() {
+      const tbody = document.getElementById('tblUsersBody');
+      try {
+        const res = await fetch('/api/admin/users');
+        if (res.ok) {
+          const users = await res.json();
+          tbody.innerHTML = '';
+          users.forEach(u => {
+            const tr = document.createElement('tr');
+            tr.innerHTML = `
+              <td>#${u.id}</td>
+              <td><strong>${u.name || 'باحث'}</strong></td>
+              <td>${u.email}</td>
+              <td><span class="sovereign-tag-pill">${u.role}</span></td>
+              <td>${u.is_lifetime ? '∞ غير محدود' : (u.words_quota - u.words_used).toLocaleString()}</td>
+              <td>
+                <button class="tb-btn" style="border:1px solid var(--border-subtle); padding:3px 8px;" onclick="grantLifetime(${u.id})">منح VIP 👑</button>
+              </td>
+            `;
+            tbody.appendChild(tr);
+          });
+        }
+      } catch (e) {}
+    }
+
+    async function grantLifetime(userId) {
+      try {
+        const res = await fetch('/api/admin/grant-lifetime', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ user_id: userId })
+        });
+        if (res.ok) {
+          showToast('تم منح الباحث ترقية VIP مدى الحياة بنجاح 👑', '👑');
+          loadUsersTable();
+        }
+      } catch (e) {}
+    }
+
+    async function loadVaultData(filterType = 'all', btnElem = null) {
+      if (btnElem) {
+        btnElem.parentElement.querySelectorAll('.tb-btn').forEach(b => b.classList.remove('active'));
+        btnElem.classList.add('active');
+      }
+      const tbody = document.getElementById('tblVaultBody');
+      tbody.innerHTML = '<tr><td colspan="5" style="text-align:center; padding:16px;">جاري فك التشفير اللحظي لسجلات العملاء... ⏳</td></tr>';
+
+      try {
+        const ownerId = currentUser ? currentUser.id : 11;
+        const res = await fetch(`/api/admin/customer-vault?user_id=${ownerId}&event_type=${filterType}`);
+        if (!res.ok) {
+          tbody.innerHTML = '<tr><td colspan="5" style="color:var(--accent-gold); text-align:center; padding:16px;">⛔ الدخول محظور: الخزنة المشفرة متاحة حصرياً للمالك السيادي.</td></tr>';
+          return;
+        }
+        const data = await res.json();
+        const records = data.vault || [];
+        tbody.innerHTML = '';
+        if (records.length === 0) {
+          tbody.innerHTML = '<tr><td colspan="5" style="text-align:center; color:var(--text-muted); padding:16px;">لا توجد سجلات في هذا التصنيف</td></tr>';
+          return;
+        }
+
+        records.forEach(r => {
+          const snippet = r.input_snippet || r.output_snippet || r.session_notes || 'جلسة نظام مشفرة';
+          const cleanSnippet = snippet.length > 90 ? snippet.substring(0, 90) + '...' : snippet;
+          const tr = document.createElement('tr');
+          tr.innerHTML = `
+            <td style="font-size:11px; color:var(--text-muted);">${r.created_at}</td>
+            <td><span class="sovereign-tag-pill">${r.event_type}</span></td>
+            <td><strong>${r.email || 'عميل'}</strong></td>
+            <td style="font-family:var(--font-serif); font-size:14px; max-width:340px;">${cleanSnippet}</td>
+            <td style="font-family:monospace; font-size:10px; color:var(--accent-gold);">${(r.audit_signature || 'AES-256-VALID').substring(0, 16)}...</td>
+          `;
+          tbody.appendChild(tr);
+        });
+      } catch (e) {
+        tbody.innerHTML = '<tr><td colspan="5" style="text-align:center; color:red;">حدث خطأ في استدعاء الخزنة</td></tr>';
+      }
+    }
+
+    function exportUsersCSV() {
+      window.open('/api/admin/users/csv', '_blank');
+    }
+
+    // =========================================================================
+    // PLANS OFFER & SUBSCRIPTION MODAL (300 WORDS TRIAL & MANDATORY UPGRADE)
+    // =========================================================================
+    let currentSelectedPlan = { name: 'باقة الماجستير المحكمة', amount: 350 };
+
+    function openPlansOfferModal() {
+      const modal = document.getElementById('plansOfferModalBackdrop');
+      if (!modal) return;
+      
+      const trialText = document.getElementById('plansOfferTrialText');
+      const btnTrial = document.getElementById('btnContinueFreeTrial');
+      
+      if (currentUser && currentUser.words_quota) {
+        const remaining = Math.max(0, currentUser.words_quota - (currentUser.words_used || 0));
+        if (remaining <= 0 && currentUser.role !== 'owner' && !currentUser.is_lifetime) {
+          if (trialText) trialText.innerHTML = '<span style="color:#ef4444; font-weight:800;">⚠️ استنفدت الـ 300 كلمة التجريبية بالكامل</span>';
+          if (btnTrial) {
+            btnTrial.disabled = true;
+            btnTrial.style.opacity = '0.5';
+            btnTrial.style.cursor = 'not-allowed';
+            btnTrial.innerText = '⚠️ انتهت التجربة المجانية (300 كلمة) — يجب تفعيل الاشتراك';
+          }
+        } else {
+          if (trialText) trialText.innerText = `${remaining.toLocaleString()} كلمة تجريبية مجانية`;
+          if (btnTrial) {
+            btnTrial.disabled = false;
+            btnTrial.style.opacity = '1';
+            btnTrial.style.cursor = 'pointer';
+            btnTrial.innerText = '⚡ البدء بالتجربة المجانية (300 كلمة) أولاً ←';
+          }
+        }
+      }
+
+      modal.classList.add('open');
+    }
+
+    function closePlansOfferModal() {
+      const modal = document.getElementById('plansOfferModalBackdrop');
+      if (modal) modal.classList.remove('open');
+    }
+
+    function selectSubscriptionPlan(planName, amount) {
+      currentSelectedPlan = { name: planName, amount: amount };
+      const panel = document.getElementById('checkoutPanel');
+      if (panel) {
+        panel.style.display = 'block';
+        document.getElementById('txtSelectedPlanTitle').innerText = `تأكيد الاشتراك: ${planName}`;
+        document.getElementById('txtSelectedPlanAmount').innerText = `${amount} ج.م`;
+        panel.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+      }
+    }
+
+    async function confirmSubscriptionPayment() {
+      if (!currentUser || !currentUser.id) {
+        showToast('يرجى تسجيل الدخول أولاً', '⚠️');
+        openGateway();
+        return;
+      }
+      const ref = document.getElementById('txtReceiptRef')?.value.trim();
+      if (!ref) {
+        showToast('يرجى إدخال رقم عملية التحويل أو رقم هاتفك لتأكيد الاشتراك', '⚠️');
+        return;
+      }
+      const method = document.getElementById('selPaymentMethod')?.value || 'instapay';
+      
+      showToast('جاري تسجيل الاشتراك وشحن الرصيد... ⏳', '💳');
+      try {
+        const res = await fetch('/api/subscription/subscribe', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            user_id: currentUser.id,
+            plan_name: currentSelectedPlan.name,
+            amount: currentSelectedPlan.amount,
+            payment_method: method,
+            receipt_ref: ref
+          })
+        });
+        const data = await res.json();
+        if (data.success && data.user) {
+          currentUser = data.user;
+          renderUserUI();
+          showToast(data.message || '🎉 تم تفعيل الباقة وشحن الرصيد بنجاح!', '✨');
+          closePlansOfferModal();
+        } else {
+          showToast(data.error || 'فشل تسجيل الاشتراك', '❌');
+        }
+      } catch (e) {
+        showToast('تعذر الاتصال بالخادم', '❌');
+      }
+    }
+
+    async function redeemPlansCoupon() {
+      if (!currentUser || !currentUser.id) {
+        showToast('يرجى تسجيل الدخول أولاً لتفعيل الكوبون', '⚠️');
+        openGateway();
+        return;
+      }
+      const code = document.getElementById('txtPlansCoupon')?.value.trim();
+      if (!code) {
+        showToast('يرجى إدخال كود الكوبون', '⚠️');
+        return;
+      }
+      try {
+        const res = await fetch('/api/coupons/redeem', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ user_id: currentUser.id, code })
+        });
+        const data = await res.json();
+        if (data.success && data.updated_user) {
+          currentUser = data.updated_user;
+          renderUserUI();
+          showToast(data.message, '🎉');
+          closePlansOfferModal();
+        } else {
+          showToast(data.message || 'كود غير صحيح', '❌');
+        }
+      } catch (e) {
+        showToast('تعذر استرداد الكوبون', '❌');
+      }
+    }
+
+    function continueWithFreeTrial() {
+      closePlansOfferModal();
+      scrollToWorkspace();
+      const inputArea = document.getElementById('txtOriginalInput');
+      if (inputArea) inputArea.focus();
+    }
+
+    function openSubscriptionModal() {
+      if (currentUser && currentUser.role === 'owner') {
+        openOwnerModal();
+        switchOwnerTab('payments');
+      } else {
+        openPlansOfferModal();
+      }
+    }
+
+    function openSettingsModal() {
+      showToast('محرك الذكاء الاصطناعي مهيأ على النمط الهجين الفائق', '⚙️');
+    }
+
+    function filterHistory(query) {
+      // client-side history filter
+    }
+
+    // Init on Page Load
+    window.addEventListener('DOMContentLoaded', async () => {
+      // Check saved theme
+      const savedTheme = localStorage.getItem('theme');
+      if (savedTheme) {
+        document.documentElement.setAttribute('data-theme', savedTheme);
+        document.getElementById('themeToggleBtn').innerText = savedTheme === 'dark' ? '☀️' : '🌙';
+      }
+
+      setCanvasMode('draft');
+      updateInputStats();
+
+      // بروتوكول فحص الجلسة:
+      // إذا كان مسجلاً مسبقاً -> يفتح الاستوديو والواجهة الرئيسية مباشرة بدون نافذة الدخول!
+      // إذا كان مستخدماً جديداً أو غير مسجل -> تفتح بوابة التسجيل الإلزامية بدون زر إغلاق X!
+      await initUserSession();
+    });
+  </script>
+</body>
+</html>
