@@ -2,7 +2,7 @@
 <html lang="ar" dir="rtl" data-theme="light">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, viewport-fit=cover">
   <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
   <meta http-equiv="Pragma" content="no-cache">
   <meta http-equiv="Expires" content="0">
@@ -1422,6 +1422,351 @@
     .toast-pill.show {
       transform: translateX(-50%) translateY(0);
     }
+
+    /* =========================================================================
+       ELITE MOBILE & TABLET RESPONSIVE SYSTEM (HIGH-DPI RETINA OPTIMIZED)
+       Engineered for seamless iPhone, Android, iPad & Desktop experiences
+       ========================================================================= */
+
+    /* Global High-Resolution Crispness */
+    img, .gateway-logo-img, .jenni-brand-icon {
+      image-rendering: -webkit-optimize-contrast;
+      image-rendering: crisp-edges;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    /* Mobile Segmented Studio Tabs (Hidden on Desktop) */
+    .mobile-studio-tabs {
+      display: none;
+      background: var(--bg-subtle);
+      border-bottom: 1px solid var(--border-subtle);
+      padding: 6px;
+      gap: 6px;
+      position: sticky;
+      top: 0;
+      z-index: 20;
+    }
+
+    .mobile-tab-btn {
+      flex: 1;
+      padding: 10px 4px;
+      border: none;
+      border-radius: 8px;
+      background: transparent;
+      color: var(--text-secondary);
+      font-size: 13px;
+      font-weight: 700;
+      cursor: pointer;
+      font-family: inherit;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 4px;
+      transition: all 0.2s ease;
+    }
+
+    .mobile-tab-btn.active {
+      background: var(--bg-surface);
+      color: var(--primary-blue);
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    }
+
+    /* TABLET & MOBILE BREAKPOINT (<= 992px) */
+    @media screen and (max-width: 992px) {
+      .studio-wrapper {
+        padding: 0 10px !important;
+        margin-bottom: 40px !important;
+      }
+
+      .mac-window-box {
+        border-radius: 16px !important;
+      }
+
+      .mac-window-titlebar {
+        height: auto !important;
+        padding: 10px 14px !important;
+        flex-direction: column !important;
+        align-items: stretch !important;
+        gap: 8px !important;
+      }
+
+      .doc-headline-input {
+        width: 100% !important;
+        text-align: right !important;
+        font-size: 13px !important;
+      }
+
+      .mobile-studio-tabs {
+        display: flex !important;
+      }
+
+      .studio-grid {
+        display: block !important;
+        min-height: auto !important;
+      }
+
+      /* Default mobile display: Canvas active, others hidden */
+      .col-canvas {
+        display: flex !important;
+        width: 100% !important;
+      }
+
+      .col-assistant {
+        display: none;
+        width: 100% !important;
+        border-right: none !important;
+        border-top: 1px solid var(--border-subtle) !important;
+      }
+
+      .col-library {
+        display: none;
+        width: 100% !important;
+        border-left: none !important;
+        border-top: 1px solid var(--border-subtle) !important;
+      }
+
+      .editor-body-container {
+        padding: 16px 12px !important;
+      }
+
+      .scholarly-textarea {
+        font-size: 16px !important;
+        line-height: 1.7 !important;
+        min-height: 170px !important;
+        padding: 14px !important;
+      }
+    }
+
+    /* SMARTPHONE BREAKPOINT (<= 768px) */
+    @media screen and (max-width: 768px) {
+      body {
+        font-size: 14px !important;
+      }
+
+      /* Navbar on Mobile */
+      .jenni-navbar {
+        padding: 0 12px !important;
+        height: 56px !important;
+      }
+
+      .jenni-brand-title {
+        font-size: 15px !important;
+      }
+
+      .jenni-brand-subtitle {
+        display: none !important;
+      }
+
+      .jenni-nav-menu {
+        display: none !important;
+      }
+
+      .jenni-nav-actions {
+        gap: 6px !important;
+      }
+
+      .btn-primary-cta {
+        display: none !important;
+      }
+
+      .quota-badge-pill {
+        padding: 5px 8px !important;
+        font-size: 11.5px !important;
+      }
+
+      .btn-auth-user {
+        padding: 6px 10px !important;
+        font-size: 12px !important;
+      }
+
+      .btn-sovereign-crown {
+        padding: 6px 10px !important;
+        font-size: 11.5px !important;
+      }
+
+      /* Hero Section on Mobile */
+      .jenni-hero-container {
+        margin: 16px auto 14px auto !important;
+        padding: 0 14px !important;
+      }
+
+      .jenni-hero-badge {
+        font-size: 11.5px !important;
+        padding: 4px 12px !important;
+        margin-bottom: 10px !important;
+      }
+
+      .jenni-hero-h1 {
+        font-size: 22px !important;
+        line-height: 1.35 !important;
+        margin-bottom: 8px !important;
+      }
+
+      .jenni-hero-desc {
+        font-size: 13.5px !important;
+        line-height: 1.55 !important;
+        margin-bottom: 14px !important;
+      }
+
+      .btn-hero-launch {
+        width: 100% !important;
+        padding: 12px 20px !important;
+        font-size: 15px !important;
+      }
+
+      .hero-social-proof {
+        display: none !important;
+      }
+
+      /* Canvas Toolbar & Actions */
+      .canvas-toolbar {
+        height: auto !important;
+        padding: 8px 10px !important;
+        flex-wrap: wrap !important;
+        gap: 6px !important;
+      }
+
+      .toolbar-button-group {
+        flex-wrap: wrap !important;
+        gap: 4px !important;
+      }
+
+      .tb-btn {
+        padding: 6px 8px !important;
+        font-size: 12px !important;
+      }
+
+      .canvas-action-footer {
+        flex-direction: column !important;
+        gap: 8px !important;
+        align-items: stretch !important;
+      }
+
+      .btn-transform-hero {
+        width: 100% !important;
+        justify-content: center !important;
+        padding: 13px 20px !important;
+        font-size: 15px !important;
+      }
+
+      /* =======================================================
+         CRUCIAL: WELCOME GATEWAY MODAL RESCUE ON MOBILE
+         ======================================================= */
+      .gateway-backdrop {
+        padding: 10px !important;
+        align-items: flex-start !important;
+        overflow-y: auto !important;
+        -webkit-overflow-scrolling: touch !important;
+      }
+
+      .gateway-card {
+        display: flex !important;
+        flex-direction: column !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        min-height: auto !important;
+        max-height: 94vh !important;
+        border-radius: 20px !important;
+        margin: auto 0 !important;
+        overflow-y: auto !important;
+        box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4) !important;
+      }
+
+      /* Hide right decorative side on small screens */
+      .gateway-art-col {
+        display: none !important;
+      }
+
+      .gateway-auth-col {
+        padding: 22px 16px !important;
+        gap: 14px !important;
+        width: 100% !important;
+      }
+
+      .gateway-logo-wrapper {
+        margin-bottom: 2px !important;
+      }
+
+      .gateway-logo-img {
+        width: 72px !important;
+        height: 72px !important;
+        border-radius: 18px !important;
+      }
+
+      .gateway-logo-glow {
+        width: 85px !important;
+        height: 85px !important;
+      }
+
+      .sovereign-quick-card {
+        padding: 12px 14px !important;
+      }
+
+      .sovereign-crown-icon {
+        font-size: 20px !important;
+      }
+
+      .sovereign-texts h4 {
+        font-size: 12.5px !important;
+      }
+
+      .sovereign-texts p {
+        font-size: 11px !important;
+      }
+
+      .btn-google-luxury {
+        padding: 11px 14px !important;
+        font-size: 13.5px !important;
+      }
+
+      .gateway-text-input {
+        font-size: 16px !important; /* Prevents auto-zoom in iOS Safari */
+        padding: 11px 14px !important;
+      }
+
+      .btn-gateway-submit {
+        padding: 12px 16px !important;
+        font-size: 14.5px !important;
+      }
+
+      /* Modals (Plans & Executive Vault) */
+      .executive-modal-backdrop {
+        padding: 10px !important;
+      }
+
+      .executive-modal-box {
+        border-radius: 18px !important;
+        width: 100% !important;
+        max-height: 94vh !important;
+      }
+
+      .executive-header {
+        padding: 14px 16px !important;
+      }
+
+      .executive-header h3 {
+        font-size: 15px !important;
+      }
+
+      .executive-subtabs-bar {
+        padding: 6px 14px !important;
+        overflow-x: auto !important;
+      }
+
+      .executive-body {
+        padding: 14px !important;
+      }
+
+      .toast-pill {
+        width: 90% !important;
+        text-align: center !important;
+        justify-content: center !important;
+        font-size: 12.5px !important;
+        padding: 10px 16px !important;
+      }
+    }
+
   </style>
 </head>
 <body>
@@ -1827,7 +2172,22 @@
         </div>
       </div>
 
+
+      <!-- Mobile Segmented Tabs Bar (Active on Mobile & Tablet) -->
+      <div class="mobile-studio-tabs" id="mobileStudioTabs">
+        <button class="mobile-tab-btn active" id="tabBtnCanvas" onclick="switchMobileStudioTab('canvas')">
+          ✍️ محرر الصياغة
+        </button>
+        <button class="mobile-tab-btn" id="tabBtnAssistant" onclick="switchMobileStudioTab('assistant')">
+          📊 كواشف الذكاء
+        </button>
+        <button class="mobile-tab-btn" id="tabBtnLibrary" onclick="switchMobileStudioTab('library')">
+          📚 المعاجم والمصادر
+        </button>
+      </div>
+
       <!-- 3-Column Studio Grid -->
+
       <div class="studio-grid">
         
         <!-- COLUMN 1: LIBRARY & PERSONAS -->
@@ -2928,6 +3288,51 @@ ${currentUser.email}
       // إذا كان مستخدماً جديداً أو غير مسجل -> تفتح بوابة التسجيل الإلزامية بدون زر إغلاق X!
       await initUserSession();
     });
+  
+    // Mobile Studio Segmented Tab Switcher
+    function switchMobileStudioTab(tab) {
+      const tabBtnCanvas = document.getElementById('tabBtnCanvas');
+      const tabBtnAssistant = document.getElementById('tabBtnAssistant');
+      const tabBtnLibrary = document.getElementById('tabBtnLibrary');
+
+      const colCanvas = document.querySelector('.col-canvas');
+      const colAssistant = document.querySelector('.col-assistant');
+      const colLibrary = document.querySelector('.col-library');
+
+      if (tabBtnCanvas) tabBtnCanvas.classList.remove('active');
+      if (tabBtnAssistant) tabBtnAssistant.classList.remove('active');
+      if (tabBtnLibrary) tabBtnLibrary.classList.remove('active');
+
+      if (tab === 'canvas') {
+        if (tabBtnCanvas) tabBtnCanvas.classList.add('active');
+        if (colCanvas) colCanvas.style.setProperty('display', 'flex', 'important');
+        if (colAssistant) colAssistant.style.setProperty('display', 'none', 'important');
+        if (colLibrary) colLibrary.style.setProperty('display', 'none', 'important');
+      } else if (tab === 'assistant') {
+        if (tabBtnAssistant) tabBtnAssistant.classList.add('active');
+        if (colCanvas) colCanvas.style.setProperty('display', 'none', 'important');
+        if (colAssistant) colAssistant.style.setProperty('display', 'flex', 'important');
+        if (colLibrary) colLibrary.style.setProperty('display', 'none', 'important');
+      } else if (tab === 'library') {
+        if (tabBtnLibrary) tabBtnLibrary.classList.add('active');
+        if (colCanvas) colCanvas.style.setProperty('display', 'none', 'important');
+        if (colAssistant) colAssistant.style.setProperty('display', 'none', 'important');
+        if (colLibrary) colLibrary.style.setProperty('display', 'flex', 'important');
+      }
+    }
+
+    // Reset layout on window resize to desktop
+    window.addEventListener('resize', function() {
+      if (window.innerWidth > 992) {
+        const colCanvas = document.querySelector('.col-canvas');
+        const colAssistant = document.querySelector('.col-assistant');
+        const colLibrary = document.querySelector('.col-library');
+        if (colCanvas) colCanvas.style.display = '';
+        if (colAssistant) colAssistant.style.display = '';
+        if (colLibrary) colLibrary.style.display = '';
+      }
+    });
+
   </script>
 </body>
 </html>
