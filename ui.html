@@ -40,36 +40,40 @@
        WORLD-CLASS DESIGN SYSTEM: JENNI.AI & DRIBBLE CREXTIO INSPIRED
        ========================================================================= */
     :root {
-      --bg-body: #f8fafc;
-      --bg-surface: #ffffff;
-      --bg-subtle: #f1f5f9;
-      --bg-hover: #e2e8f0;
+      /* =====================================================================
+         WARM EYE-COMFORT ACADEMIC PAPER PALETTE (Kindle & Apple Books Standard)
+         Engineered to eliminate eye fatigue, screen glare & blue-light strain
+         ===================================================================== */
+      --bg-body: #fbf9f4; /* Soothing warm ivory book-paper, zero glare */
+      --bg-surface: #ffffff; /* Clean soft white card background */
+      --bg-subtle: #f4efe4; /* Soft warm tinted surface */
+      --bg-hover: #ebe4d5;
       
-      --text-main: #0f172a;
-      --text-secondary: #475569;
-      --text-muted: #94a3b8;
+      --text-main: #24211e; /* Warm espresso charcoal, high readability, zero harshness */
+      --text-secondary: #57514a; /* Gentle warm muted charcoal */
+      --text-muted: #8c8376;
       
-      --primary-blue: #2563eb;
-      --primary-blue-hover: #1d4ed8;
+      --primary-blue: #1d4ed8; /* Deep royal academic sapphire */
+      --primary-blue-hover: #1e40af;
       --primary-blue-soft: #eff6ff;
       --primary-blue-border: #bfdbfe;
       
-      --accent-gold: #d97706;
+      --accent-gold: #b45309; /* Calming warm gold/amber */
       --accent-gold-soft: #fef3c7;
       --accent-gold-border: #fde68a;
       
-      --accent-emerald: #10b981;
+      --accent-emerald: #059669; /* Soothing sage emerald */
       --accent-emerald-soft: #ecfdf5;
       
-      --border-subtle: #e2e8f0;
-      --border-medium: #cbd5e1;
-      --border-focus: #2563eb;
+      --border-subtle: #e9e2d5;
+      --border-medium: #d6ccbd;
+      --border-focus: #1d4ed8;
       
-      --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.05);
-      --shadow-md: 0 4px 14px rgba(0, 0, 0, 0.06);
-      --shadow-lg: 0 12px 36px rgba(0, 0, 0, 0.08);
-      --shadow-xl: 0 25px 60px -15px rgba(15, 23, 42, 0.16);
-      --shadow-modal: 0 25px 80px -12px rgba(15, 23, 42, 0.25);
+      --shadow-sm: 0 1px 3px rgba(36, 33, 30, 0.05);
+      --shadow-md: 0 4px 14px rgba(36, 33, 30, 0.06);
+      --shadow-lg: 0 12px 36px rgba(36, 33, 30, 0.08);
+      --shadow-xl: 0 25px 60px -15px rgba(36, 33, 30, 0.14);
+      --shadow-modal: 0 25px 80px -12px rgba(36, 33, 30, 0.25);
       
       --radius-sm: 8px;
       --radius-md: 12px;
@@ -82,12 +86,16 @@
     }
 
     [data-theme="dark"] {
-      --bg-body: #090e17;
-      --bg-surface: #0f172a;
-      --bg-subtle: #141e33;
-      --bg-hover: #1e293b;
+      /* =====================================================================
+         NIGHT READING & OLED EYE-CARE PALETTE (Midnight Slate)
+         Gentle low-luminance palette engineered for night academic sessions
+         ===================================================================== */
+      --bg-body: #0b1120; /* Deep soothing navy-black, zero OLED flicker */
+      --bg-surface: #131d33; /* Soft slate card */
+      --bg-subtle: #1a2744;
+      --bg-hover: #233458;
       
-      --text-main: #f8fafc;
+      --text-main: #f1f5f9; /* Soft warm off-white */
       --text-secondary: #94a3b8;
       --text-muted: #64748b;
       
@@ -692,14 +700,15 @@
       border-radius: var(--radius-md);
       padding: 18px;
       font-family: var(--font-serif);
-      font-size: 18px;
-      line-height: 1.8;
+      font-size: 19px;
+      line-height: 1.95;
+      letter-spacing: 0.015em;
       color: var(--text-main);
       background: var(--bg-surface);
       outline: none;
       resize: vertical;
       min-height: 220px;
-      transition: border-color 0.2s;
+      transition: border-color 0.2s, background-color 0.2s;
     }
 
     .scholarly-textarea:focus {
@@ -707,8 +716,9 @@
     }
 
     .scholarly-textarea.output {
-      background: var(--bg-subtle);
-      color: #0f172a;
+      background: #f7f3ea; /* Calming warm parchment tint */
+      color: #1c1917;
+      border-color: #e2d9c8;
     }
 
     [data-theme="dark"] .scholarly-textarea.output {
@@ -1585,6 +1595,16 @@
         font-size: 11.5px !important;
       }
 
+      /* Mobile Direct Workspace Launch: Hide bulky hero on small screens */
+      .jenni-hero-container {
+        display: none !important;
+      }
+      
+      .studio-wrapper {
+        padding: 6px !important;
+        margin-top: 8px !important;
+        margin-bottom: 20px !important;
+      }
       /* Hero Section on Mobile */
       .jenni-hero-container {
         margin: 16px auto 14px auto !important;
@@ -1777,10 +1797,14 @@
        ========================================================================= -->
   <div class="gateway-backdrop hidden" id="welcomeGateway">
     <script>
-      // بروتوكول فحص فوري: إذا لم يكن هناك جلسة سابقة يتم إظهار نافذة الدخول الإلزامية فوراً ومنع التمرير
+      // بروتوكول التشغيل الفوري المريح: تمكين الضيف بـ 300 كلمة تلقائياً دون إزعاجه بنوافذ منبثقة
       if (!localStorage.getItem('saas_user_id')) {
-        document.getElementById('welcomeGateway').classList.remove('hidden');
-        document.body.style.overflow = 'hidden';
+        localStorage.setItem('saas_user_id', 'researcher_' + Math.floor(1000 + Math.random() * 9000));
+        localStorage.setItem('saas_user_name', 'باحث أكاديمي ضيف');
+        localStorage.setItem('saas_user_quota', '300');
+        // إبقاء النافذة مخفية حتى يفتح التطبيق مباشرة في مساحة التحرير المريحة
+        document.getElementById('welcomeGateway').classList.add('hidden');
+        document.body.style.overflow = '';
       }
     </script>
     <div class="gateway-card">
