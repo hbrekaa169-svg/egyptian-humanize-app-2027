@@ -7,8 +7,8 @@
 **The World-Class Arabic Academic Writing & AI-Detection Immunizer | Turnitin & GPTZero Proof**
 
 <p align="center">
-  <a href="https://github.com/kamoovelegatar-cmd/egyptian-humanize-app-2027/stargazers"><img src="https://img.shields.io/github/stars/kamoovelegatar-cmd/egyptian-humanize-app-2027?style=for-the-badge&logo=github&color=FFB800" alt="GitHub Stars" /></a>
-  <a href="https://github.com/kamoovelegatar-cmd/egyptian-humanize-app-2027/network/members"><img src="https://img.shields.io/github/forks/kamoovelegatar-cmd/egyptian-humanize-app-2027?style=for-the-badge&logo=github&color=38BDF8" alt="GitHub Forks" /></a>
+  <a href="https://github.com/hbrekaa169-svg/egyptian-humanize-app-2027/stargazers"><img src="https://img.shields.io/github/stars/hbrekaa169-svg/egyptian-humanize-app-2027?style=for-the-badge&logo=github&color=FFB800" alt="GitHub Stars" /></a>
+  <a href="https://github.com/hbrekaa169-svg/egyptian-humanize-app-2027/network/members"><img src="https://img.shields.io/github/forks/hbrekaa169-svg/egyptian-humanize-app-2027?style=for-the-badge&logo=github&color=38BDF8" alt="GitHub Forks" /></a>
   <a href="LICENSE"><img src="https://img.shields.io/badge/License-MIT-emerald?style=for-the-badge" alt="License: MIT" /></a>
   <a href="https://www.python.org/"><img src="https://img.shields.io/badge/Python-3.10%2B-3776AB?style=for-the-badge&logo=python&logoColor=white" alt="Python 3.10+" /></a>
   <img src="https://img.shields.io/badge/Turnitin%20Bypass-100%25-00C853?style=for-the-badge&logo=shield" alt="Turnitin Bypass 100%" />
@@ -88,7 +88,7 @@ flowchart LR
 
 ### 1. Clone the Repository
 ```bash
-git clone https://github.com/kamoovelegatar-cmd/egyptian-humanize-app-2027.git
+git clone https://github.com/hbrekaa169-svg/egyptian-humanize-app-2027.git
 cd egyptian-humanize-app-2027
 ```
 
@@ -186,7 +186,7 @@ If you incorporate this engine, rhetorical taxonomy, or software in your researc
   author = {Egyptian Humanizer Research Group},
   title = {Egyptian Humanizer 2027: Sovereign AI-to-Academic Stylistic Inversion Engine},
   year = {2026},
-  url = {https://github.com/kamoovelegatar-cmd/egyptian-humanize-app-2027},
+  url = {https://github.com/hbrekaa169-svg/egyptian-humanize-app-2027},
   version = {2.7.0}
 }
 ```
